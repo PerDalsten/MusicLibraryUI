@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+<meta charset="UTF-8" ></meta>
+<title>Exercise1</title>
+<script type="text/javascript" src="lib/angular.min.js"></script>
+
+<script type="text/javascript" src="js/controller.js">
+	
+</script>
+
+</head>
+<body ng-app="myapp">
+	<div ng-controller="HelloController">
+		<h2>Some tasks!</h2>
+
+		<table border="1">
+			<tr>
+				<th>Title </th>
+				<th>Desc</th>
+			</tr>
+			<tr ng-repeat="theTask in tasks">
+				<td>{{theTask.title}}</td>
+				<td>{{theTask.desc}}</td>
+			</tr>
+		</table>
+
+	</div>
+
+</body>
+</html>

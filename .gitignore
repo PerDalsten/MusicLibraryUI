@@ -2,7 +2,7 @@
 
 target
 
-data
+src/main/webapp/lib
 
 logs
 **/*.log
