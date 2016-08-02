@@ -3,26 +3,25 @@
 <html>
 <head>
 <meta charset="UTF-8" ></meta>
-<title>Exercise1</title>
+<title>MusicLibrary</title>
 <script type="text/javascript" src="lib/angular.min.js"></script>
 
-<script type="text/javascript" src="js/controller.js">
-	
-</script>
+<script type="text/javascript" src="js/config.js"></script>
+<script type="text/javascript" src="js/controller.js"></script>
 
 </head>
-<body ng-app="myapp">
-	<div ng-controller="HelloController">
-		<h2>Some tasks!</h2>
+<body ng-app="musiclibraryapp">
+	<div ng-controller="MusicLibraryController">
+		<h2>Artists</h2>
 
 		<table border="1">
 			<tr>
-				<th>Title </th>
-				<th>Desc</th>
+				<th>Id</th>
+				<th>Name</th>
 			</tr>
-			<tr ng-repeat="theTask in tasks">
-				<td>{{theTask.title}}</td>
-				<td>{{theTask.desc}}</td>
+			<tr ng-repeat="artist in artists">
+				<td>{{artist.id}}</td>
+				<td>{{artist.name}}</td>
 			</tr>
 		</table>
 
