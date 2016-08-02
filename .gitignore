@@ -16,3 +16,4 @@ logs
 /.apt_generated/
 
 .DS_Store
+.tern-project
