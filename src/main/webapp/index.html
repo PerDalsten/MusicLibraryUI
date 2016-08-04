@@ -2,7 +2,7 @@
 
 <html>
 <head>
-<meta charset="UTF-8" ></meta>
+<meta charset="UTF-8"></meta>
 <title>MusicLibrary</title>
 <script type="text/javascript" src="lib/angular.min.js"></script>
 
@@ -12,18 +12,31 @@
 </head>
 <body ng-app="musiclibraryapp">
 	<div ng-controller="MusicLibraryController">
-		<h2>Artists</h2>
 
-		<table border="1">
-			<tr>
-				<th>Id</th>
-				<th>Name</th>
-			</tr>
-			<tr ng-repeat="artist in artists">
-				<td>{{artist.id}}</td>
-				<td>{{artist.name}}</td>
-			</tr>
-		</table>
+
+
+        <h2>Album</h2>
+        
+        <span ng-bind="album.title"></span>
+        <span ng-bind="album.year"></span>
+        <span ng-bind="album.artist.name"></span>
+		<ul>
+			<li ng-repeat="song in album.songs" ng-bind="song.title"></li>
+		</ul>
+        
+
+		<h2>Artist Albums</h2>
+		<ul>
+			<li ng-repeat="album in artistAlbums" ng-bind="album.title" ng-click="getAlbum(album.id)"></li>
+		</ul>
+
+
+		<h2>Artists</h2>
+		<!-- ng-attr-id to set tag id; move album list to this element? -->
+		<ul>
+			<li ng-repeat="artist in artists" ng-bind="artist.name"
+				ng-click="getArtistAlbums(artist.id)"></li>
+		</ul>
 
 	</div>
 
