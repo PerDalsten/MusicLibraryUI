@@ -1,0 +1,27 @@
+html {
+	height: 100%;
+	margin: 0px;
+}
+
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	background-color: #110033;
+	color: white;
+	height: 100%;
+	margin: 0px;
+}
+
+.albumlist {
+	height: 100%;
+	width: 200px;
+	background: green;
+	overflow: auto;
+	float: left;
+}
+
+.album {
+	margin-left: 200px;
+	height: 100%;
+	overflow: auto;
+}

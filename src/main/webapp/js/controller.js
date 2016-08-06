@@ -18,14 +18,14 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL) {
 
 			if ($scope.artists.length > 0) {
 				$scope.artist = $scope.artists[0];
-				getArtistAlbums($scope.artist.id)
+				$scope.getArtistAlbums()
 			}
 		}, function errorCallback(response) {
 			console.log(response.statusText);
 		});
 	}
 
-	getArtistAlbums = function(artistId) {
+	$scope.getArtistAlbums = function() {
 		console.log('Artist changed: ' + $scope.artist.id);
 		$http({
 			method : 'GET',

@@ -9,36 +9,38 @@
 <script type="text/javascript" src="js/config.js"></script>
 <script type="text/javascript" src="js/controller.js"></script>
 
+<link rel="stylesheet" type="text/css" href="styles/musiclibraryui.css" />
+
 </head>
 <body ng-app="musiclibraryapp">
-	<div ng-controller="MusicLibraryController">
+	<div ng-controller="MusicLibraryController" style="height: 100%">
 
-		<div>
 
+
+		<div
+			class="albumlist">
 			<label for="artistSelect">Artist:</label> <select name="artistSelect"
 				id="artistSelect"
 				ng-options="artist.name for artist in artists track by artist.id"
-				ng-model="artist"
-				ng-change="getArtistAlbums()"
-				></select>
+				ng-model="artist" ng-change="getArtistAlbums()"></select>
+			<ul>
+				<li ng-repeat="album in artistAlbums" ng-bind="album.title"
+					ng-click="getAlbum(album.id)"></li>
+			</ul>
+		</div>
+
+		
+
+		<div class="album">
+
+			<span ng-bind="album.title"></span> <span ng-bind="album.year"></span>
+			<span ng-bind="album.artist.name"></span>
+			<ul>
+				<li ng-repeat="song in album.songs" ng-bind="song.title"></li>
+			</ul>
 		</div>
 
 
-
-		<h2>Album</h2>
-
-		<span ng-bind="album.title"></span> <span ng-bind="album.year"></span>
-		<span ng-bind="album.artist.name"></span>
-		<ul>
-			<li ng-repeat="song in album.songs" ng-bind="song.title"></li>
-		</ul>
-
-
-		<h2>Artist Albums</h2>
-		<ul>
-			<li ng-repeat="album in artistAlbums" ng-bind="album.title"
-				ng-click="getAlbum(album.id)"></li>
-		</ul>
 
 
 	</div>
