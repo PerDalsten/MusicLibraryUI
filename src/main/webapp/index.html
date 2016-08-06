@@ -13,23 +13,37 @@
 
 </head>
 <body ng-app="musiclibraryapp">
-	<div ng-controller="MusicLibraryController" style="height: 100%">
+	<div class="app" ng-controller="MusicLibraryController">
 
 
-
-		<div
-			class="albumlist">
+		<div class="albumSearch">
+		<div>
+		    Browse:  
 			<label for="artistSelect">Artist:</label> <select name="artistSelect"
 				id="artistSelect"
 				ng-options="artist.name for artist in artists track by artist.id"
-				ng-model="artist" ng-change="getArtistAlbums()"></select>
+				ng-model="artist" ng-change="getArtistAlbums()">
+				</select> 
+		</div>
+		<div>
+		    Search: 		
+			<label for="artistName">Artist: </label> <input type="text"
+				name="artistName" ng-model="artistName" /> <label for="albumTitle">Album:
+			</label> <input type="text" name="albumTitle" ng-model="albumTitle" /> <label
+				for="albumYear">Year: </label> <input type="text" name="albumYear"
+				ng-model="albumYear" ng-pattern="/^[0-9]{1,4}$/" />
+			<button ng-click="getAlbums()">Search</button>
+			</div>
+		</div>
+
+
+		<div class="albumList">
 			<ul>
 				<li ng-repeat="album in artistAlbums" ng-bind="album.title"
 					ng-click="getAlbum(album.id)"></li>
 			</ul>
 		</div>
 
-		
 
 		<div class="album">
 
@@ -39,10 +53,6 @@
 				<li ng-repeat="song in album.songs" ng-bind="song.title"></li>
 			</ul>
 		</div>
-
-
-
-
 	</div>
 
 </body>

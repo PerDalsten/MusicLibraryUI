@@ -12,8 +12,17 @@ body {
 	margin: 0px;
 }
 
-.albumlist {
+
+.app{
 	height: 100%;
+}
+
+.albumSearch{
+	height: 50px;
+}
+
+.albumList {
+	height: calc(100% - 50px);
 	width: 200px;
 	background: green;
 	overflow: auto;
@@ -22,6 +31,7 @@ body {
 
 .album {
 	margin-left: 200px;
-	height: 100%;
+	height: calc(100% - 50px);
 	overflow: auto;
+	background: red;
 }
