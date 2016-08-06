@@ -13,30 +13,33 @@
 <body ng-app="musiclibraryapp">
 	<div ng-controller="MusicLibraryController">
 
+		<div>
+
+			<label for="artistSelect">Artist:</label> <select name="artistSelect"
+				id="artistSelect"
+				ng-options="artist.name for artist in artists track by artist.id"
+				ng-model="artist"
+				ng-change="getArtistAlbums()"
+				></select>
+		</div>
 
 
-        <h2>Album</h2>
-        
-        <span ng-bind="album.title"></span>
-        <span ng-bind="album.year"></span>
-        <span ng-bind="album.artist.name"></span>
+
+		<h2>Album</h2>
+
+		<span ng-bind="album.title"></span> <span ng-bind="album.year"></span>
+		<span ng-bind="album.artist.name"></span>
 		<ul>
 			<li ng-repeat="song in album.songs" ng-bind="song.title"></li>
 		</ul>
-        
+
 
 		<h2>Artist Albums</h2>
 		<ul>
-			<li ng-repeat="album in artistAlbums" ng-bind="album.title" ng-click="getAlbum(album.id)"></li>
+			<li ng-repeat="album in artistAlbums" ng-bind="album.title"
+				ng-click="getAlbum(album.id)"></li>
 		</ul>
 
-
-		<h2>Artists</h2>
-		<!-- ng-attr-id to set tag id; move album list to this element? -->
-		<ul>
-			<li ng-repeat="artist in artists" ng-bind="artist.name"
-				ng-click="getArtistAlbums(artist.id)"></li>
-		</ul>
 
 	</div>
 
