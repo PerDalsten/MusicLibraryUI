@@ -15,25 +15,19 @@
 <body ng-app="musiclibraryapp">
 	<div class="app" ng-controller="MusicLibraryController">
 
-
 		<div class="albumSearch">
-		<div>
-		    Browse:  
-			<label for="artistSelect">Artist:</label> <select name="artistSelect"
+			<label for="artistSelect">Browse:</label> <select name="artistSelect"
 				id="artistSelect"
 				ng-options="artist.name for artist in artists track by artist.id"
 				ng-model="artist" ng-change="getArtistAlbums()">
-				</select> 
-		</div>
-		<div>
-		    Search: 		
+			</select>
+
+			<button ng-click="getAlbums()">Search</button>
 			<label for="artistName">Artist: </label> <input type="text"
 				name="artistName" ng-model="artistName" /> <label for="albumTitle">Album:
 			</label> <input type="text" name="albumTitle" ng-model="albumTitle" /> <label
 				for="albumYear">Year: </label> <input type="text" name="albumYear"
 				ng-model="albumYear" ng-pattern="/^[0-9]{1,4}$/" />
-			<button ng-click="getAlbums()">Search</button>
-			</div>
 		</div>
 
 
