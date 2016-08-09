@@ -7,39 +7,44 @@ html {
 body {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 14px;
+	font-weight: bold;
 	background-color: #110033;
-	color: lime;
-	height: 100%;
+	color: fuchsia; height : 100%;
 	width: 100%;
 	margin: 0px;
-	background-image:url("../images/albums.jpg");
+	background-image: url("../images/albums.jpg");
+	height: 100%;
 }
 
-
-.app{
+.app {
 	height: 100%;
 	width: 100%;
 }
 
-.albumSearch{
+.albumSearch {
 	height: 50px;
-	width: 100%;	
+	width: 100%;
 }
 
 button {
+	margin-top: 10px;
 	margin-left: 35px;
 }
 
+label {
+	margin-left: 10px;
+}
+
 .albumList {
-	height: calc(100% - 50px);
-	width: 25%;	
+	height: calc(100% - 60px);
+	width: 25%;
 	overflow: auto;
 	float: left;
 }
 
 .album {
 	margin-left: 200px;
-	height: calc(100% - 50px);
-	//width: 75%;
-	overflow: auto;	
+	height: calc(100% - 60px);
+	width: 75%;
+	overflow: auto;
 }
