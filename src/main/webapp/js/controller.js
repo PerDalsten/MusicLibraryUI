@@ -2,7 +2,7 @@ app = angular.module("musiclibraryapp", [ "config" ]);
 
 app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL) {
 	$scope.artists = [];
-	$scope.artistAlbums = [];
+	$scope.albums = [];
 
 	$scope.album;
 	$scope.artist;
@@ -34,7 +34,12 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL) {
 			method : 'GET',
 			url : SERVICE_URL + 'artists/' + $scope.artist.id + '/albums'			
 		}).then(function successCallback(response) {
-			$scope.artistAlbums = response.data;
+			$scope.albums = response.data;
+			
+			if ($scope.albums.length > 0) {
+				$scope.album = $scope.albums[0];
+			}
+			
 		}, function errorCallback(response) {
 			console.log(response.statusText);
 		});
@@ -93,13 +98,15 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL) {
 			url+='year='+$scope.albumYear;
 		}
 		
-		console.log('URL: '+url);
-		
 		$http({
 			method : 'GET',
 			url : url
 		}).then(function successCallback(response) {
-			$scope.artistAlbums = response.data;
+			$scope.albums = response.data;
+			
+			if ($scope.albums.length > 0) {
+				$scope.album = $scope.albums[0];
+			}
 		}, function errorCallback(response) {
 			console.log(response.statusText);
 		});

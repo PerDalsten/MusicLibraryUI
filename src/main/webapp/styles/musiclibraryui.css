@@ -6,13 +6,13 @@ html {
 
 body {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 14px;
+	font-size: 14px; 
 	font-weight: bold;
 	background-color: #110033;
-	color: fuchsia; height : 100%;
+	color: aqua;
+	height: 100%;
 	width: 100%;
 	margin: 0px;
-	background-image: url("../images/albums.jpg");
 	height: 100%;
 }
 
@@ -21,30 +21,39 @@ body {
 	width: 100%;
 }
 
-.albumSearch {
+.toolBar {
 	height: 50px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.albumSelect {
 	width: 100%;
 }
 
-button {
-	margin-top: 10px;
-	margin-left: 35px;
-}
-
-label {
+.albumSelect label {
 	margin-left: 10px;
 }
 
+.albumSearch{
+	float: right;
+	padding-right: 10px;
+}
+
 .albumList {
-	height: calc(100% - 60px);
+	height: calc(100% - 50px);
 	width: 25%;
 	overflow: auto;
 	float: left;
 }
 
 .album {
-	margin-left: 200px;
-	height: calc(100% - 60px);
+	height: calc(100% - 50px);
 	width: 75%;
 	overflow: auto;
+}
+
+.albumDescription{
+	font-weight: bold;
 }
