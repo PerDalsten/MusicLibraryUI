@@ -46,10 +46,10 @@
 
 		<div class="album" ng-if="album">
 
-			<span class="albumDescription"> <span
+			<h3><span
 				ng-bind="album.artist.name"></span>: <span ng-bind="album.title"></span>
 				(<span ng-bind="album.year"></span>)
-			</span>
+			</h3>
 			<ul>
 				<li ng-repeat="song in album.songs" ng-bind="song.title"></li>
 			</ul>
