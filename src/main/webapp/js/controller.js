@@ -1,4 +1,19 @@
-app = angular.module("musiclibraryapp", [ "config" ]);
+app = angular.module("musiclibraryapp", [ "ngRoute" , "config" ]);
+
+
+app.config(['$routeProvider', function($routeProvider) {
+    	
+	$routeProvider    
+    .when("/albumedit", {
+        templateUrl : "albumedit.html"
+    })
+    .when("/artistedit", {
+        templateUrl : "artistedit.html"
+    })    
+    .otherwise({
+        templateUrl : "albumview.html"
+    });
+}]);
 
 app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL) {
 	$scope.artists = [];

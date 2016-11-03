@@ -4,7 +4,8 @@
 <head>
 <meta charset="UTF-8"></meta>
 <title>MusicLibrary</title>
-<script type="text/javascript" src="lib/angular.min.js"></script>
+<script type="text/javascript" src="lib/angular.js"></script>
+<script type="text/javascript" src="lib/angular-route.js"></script>
 
 <script type="text/javascript" src="js/config.js"></script>
 <script type="text/javascript" src="js/controller.js"></script>
@@ -17,17 +18,25 @@
 
 		<div class="toolBar">
 			<div class="albumSelect">
-				<label for="artistSelect">Browse:</label> <select
+				<label for="artistSelect">Artist:</label> <select
 					name="artistSelect" id="artistSelect"
 					ng-options="artist.name for artist in artists track by artist.id"
 					ng-model="artist" ng-change="getArtistAlbums()">
 				</select>
 
+                <a ng-show="artist" href="#artistedit"><image src="images/edit.png" title="Edit Artist"></image></a>
+				<a href="#artistedit"><image src="images/new.png" title="New Artist"></image></a>
+				<a ng-show="artist" href="#artistedit"><image src="images/delete.png" title="Delete Artist"></image></a>	
+
 				<div class="albumSearch">
-					<button ng-click="getAlbums()">Search</button>
+				    Album:
+				    <a ng-show="album" href="#albumedit"><image src="images/edit.png" title="Edit Album"></image></a>
+				    <a href="#albumedit"><image src="images/new.png" title="New Album"></image></a>
+				    <a ng-show="album" href="#albumedit"><image src="images/delete.png" title="Delete Album"></image></a>				                        
+					<img ng-src="images/search.png" ng-click="getAlbums()"></img>
 					<label for="artistName">Artist: </label> <input type="text"
 						name="artistName" ng-model="artistName" /> <label
-						for="albumTitle">Album: </label> <input type="text"
+						for="albumTitle">Title: </label> <input type="text"
 						name="albumTitle" ng-model="albumTitle" /> <label for="albumYear">Year:
 					</label> <input type="text" name="albumYear" ng-model="albumYear"
 						ng-pattern="/^[0-9]{1,4}$/" maxlength="4" size="4" />
@@ -43,17 +52,8 @@
 			</ul>
 		</div>
 
-
-		<div class="album" ng-if="album">
-
-			<h3><span
-				ng-bind="album.artist.name"></span>: <span ng-bind="album.title"></span>
-				(<span ng-bind="album.year"></span>)
-			</h3>
-			<ul>
-				<li ng-repeat="song in album.songs" ng-bind="song.title"></li>
-			</ul>
-		</div>
+       <div ng-view="true"></div>
+		
 	</div>
 
 </body>
