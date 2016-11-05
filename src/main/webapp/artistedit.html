@@ -1,8 +1,8 @@
 <div class="artist" ng-if="artist">
-	<h3>
-		<span ng-bind="artist.name"></span>
-	</h3>
 	
-	<a href="#"><image src="images/ok.png" title="OK"></image></a>	
+	Artist name: <input ng-model="newArtist.name"></input>
+	
+	
+	<img ng-src="images/ok.png" ng-click="saveNewArtist()" title="OK"></img>	
 	<a href="#"><image src="images/cancel.png" title="Cancel"></image></a>
 </div>

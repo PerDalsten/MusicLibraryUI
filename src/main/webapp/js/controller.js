@@ -15,7 +15,7 @@ app.config(['$routeProvider', function($routeProvider) {
     });
 }]);
 
-app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL) {
+app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $location) {
 	$scope.artists = [];
 	$scope.albums = [];
 
@@ -24,6 +24,8 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL) {
 	$scope.artistName;
 	$scope.albumTitle;
 	$scope.albumYear;
+	
+	$scope.newArtist;
 	
 	loadArtists();
 
@@ -127,4 +129,26 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL) {
 		});
 	}
 
+	$scope.createNewArtist = function() {
+		console.log('New Artist');
+		$scope.newArtist= {"id":-1};
+		
+		$location.path('artistedit');
+		
+	}
+	
+	$scope.saveNewArtist = function() {
+		console.log('New Artist '+$scope.newArtist.name);
+		console.log('Old Artist '+$scope.artist.name);
+		
+		
+		
+		
+		$scope.artists.push($scope.newArtist);
+		$scope.artist=$scope.newArtist;
+		
+		
+		$location.path('');
+		
+	}
 });
