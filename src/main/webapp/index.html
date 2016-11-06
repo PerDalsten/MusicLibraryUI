@@ -20,7 +20,7 @@
 			<div class="albumSelect">
 				<label for="artistSelect">Artist:</label> <select
 					name="artistSelect" id="artistSelect"
-					ng-options="artist.name for artist in artists track by artist.id"
+					ng-options="artist.name for artist in artists | orderBy:'name' track by artist.id  "
 					ng-model="artist" ng-change="getArtistAlbums()">
 				</select>
 

@@ -132,23 +132,21 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 	$scope.createNewArtist = function() {
 		console.log('New Artist');
 		$scope.newArtist= {"id":-1};
-		
 		$location.path('artistedit');
-		
 	}
 	
 	$scope.saveNewArtist = function() {
-		console.log('New Artist '+$scope.newArtist.name);
-		console.log('Old Artist '+$scope.artist.name);
 		
-		
-		
-		
-		$scope.artists.push($scope.newArtist);
-		$scope.artist=$scope.newArtist;
-		
+		$http.post(SERVICE_URL + 'artists', $scope.newArtist).then(function successCallback(response) {
+			console.log(response.data);
+			$scope.artists.push(response.data);
+			$scope.artist=response.data;	
+			$scope.albums = [];
+			$scope.album = null;
+        }, function errorCallback(response) {
+			console.log(response.statusText);
+		});
 		
 		$location.path('');
-		
 	}
 });

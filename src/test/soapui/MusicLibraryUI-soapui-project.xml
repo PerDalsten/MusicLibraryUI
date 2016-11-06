@@ -1,5 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="5721e7c9-7a09-4699-b1f3-8e938eb43404" activeEnvironment="Default" name="MusicLibraryUI" resourceRoot="" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="e994e56f-06bf-4a84-9ce5-3090e4aebd84" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://localhost:9080" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://Viking:8089/</con:endpoint><con:endpoint>http://localhost:8089</con:endpoint><con:endpoint>http://localhost:9080</con:endpoint></con:endpoints><con:resource name="Albums" path="/MusicLibrary/rest/albums" id="8f61a5d7-dd6a-4ca0-be01-f96511d114d4"><con:settings/><con:parameters/><con:resource name="60" path="60" id="5bdfdd76-26b8-4166-a73d-c8f48d22d300"><con:settings/><con:parameters/><con:method name="Read" id="1420763d-351a-4dd4-905b-260b226fec6a" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:ns="http://localhost/MusicLibrary/rest/albums/60">ns:Response</con:element></con:representation><con:request name="60" id="a52acc7e-3ef3-48bc-80d1-6a6f523c08a6" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:9080</con:endpoint><con:request/><con:originalUri>http://localhost/MusicLibrary/rest/albums/60</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="424" path="424" id="88f71b7b-69de-4b25-af0c-f68ef73b9505"><con:settings/><con:parameters/><con:method name="Read" id="1dd94da6-8994-4e4a-8547-6a4fbd2409d3" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:ns="http://localhost/MusicLibrary/rest/albums/424">ns:Response</con:element></con:representation><con:request name="424" id="cafce413-7760-4e41-90a3-fb8cfa02936e" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:9080</con:endpoint><con:request/><con:originalUri>http://localhost/MusicLibrary/rest/albums/424</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:method name="All" id="a5443168-d7e4-4959-9238-9accaa349c0d" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="All" id="269ff15a-1c22-4e45-9866-5a49b7bbce8d" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8089</con:endpoint><con:request/><con:originalUri>http://localhost/MusicLibrary/rest/albums</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="Artists" path="/MusicLibrary/rest/artists" id="3c08ef47-52f9-41f4-9adf-7da749459824"><con:settings/><con:parameters/><con:resource name="219" path="219" id="b69412e6-36e5-4daa-91da-b4211f3864e4"><con:settings/><con:parameters/><con:method name="Read" id="4767a0cd-8f4e-4292-a93d-55754437c160" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:ns="http://localhost/MusicLibrary/rest/artists/219">ns:Response</con:element></con:representation><con:request name="219" id="72449429-e18f-4d90-b766-588779da2c01" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:9080</con:endpoint><con:request/><con:originalUri>http://localhost/MusicLibrary/rest/artists/219</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:method name="All" id="040792ad-5f44-41f1-ab78-55461b2a3128" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>text/html; charset=iso-8859-1</con:mediaType><con:status>200</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:request name="All" id="aa1ee474-d2f6-45fd-b638-7a5197de1f16" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:9080</con:endpoint><con:request/><con:originalUri>http://Viking/MusicLibrary/rest/artists</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="Artist Albums" path="/MusicLibrary/rest/artists/219/albums" id="20c4909d-bfc1-474d-8764-be7db85c1535"><con:settings/><con:parameters/><con:method name="All" id="89936f5c-f889-46dd-833b-c87c5d2ad271" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:request name="Default" id="73dc8007-b7af-4042-a50f-c7ae6826dc16" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:9080</con:endpoint><con:request/><con:originalUri>http://localhost/MusicLibrary/rest/artists/219/albums</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:restMockService id="a66060ee-f8c2-41f6-9734-aa25d094741a" port="8089" path="/" host="Viking" name="MusicLibrary MockService"><con:settings/><con:properties/><con:restMockAction name="/MusicLibrary/rest/albums" method="GET" resourcePath="/MusicLibrary/rest/albums" id="1b6d5ef0-241c-4218-9658-5a3ab9855daa"><con:settings/><con:defaultResponse xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*
+<con:soapui-project id="5721e7c9-7a09-4699-b1f3-8e938eb43404" activeEnvironment="Default" name="MusicLibraryUI" resourceRoot="" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.LoadTestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="TestSuite" value="&lt;all>"/>
+  <con:entry key="Report to Generate" value=""/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="TestRunner Path" value="/Applications/SoapUI-5.2.1.app/Contents/Resources/app/bin"/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="LoadTest" value="&lt;all>"/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="Save Project" value="false"/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Print Report Statistics" value="false"/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="TestCase" value="&lt;all>"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="ThreadCount" value=""/>
+  <con:entry key="Limit" value=""/>
+</xml-fragment>]]></con:setting></con:settings><con:restMockService id="a66060ee-f8c2-41f6-9734-aa25d094741a" port="8081" path="/MusicLibraryService" host="localhost" name="MusicLibrary MockService" docroot=""><con:settings/><con:properties/><con:onRequestScript>mockRequest.httpResponse.addHeader("Access-Control-Allow-Origin", "http://localhost:8080" )
+mockRequest.httpResponse.addHeader( "Access-Control-Allow-Headers", "Content-Type" )</con:onRequestScript><con:restMockAction name="/rest/albums" method="GET" resourcePath="/rest/albums" id="1b6d5ef0-241c-4218-9658-5a3ab9855daa"><con:settings/><con:defaultResponse xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>def requestPath = mockRequest.getPath()
+log.info "Path: "+ requestPath
+
+def resource = requestPath.split("/")[-1]
+log.info "resource: " + resource
+
+if(resource=="albums")
+  return "All"
+else if(resource=="60")
+  return "60"
+else if(resource=="424")
+  return "424"  
+else
+  return "NotFound"
+
+
+
+/*
 // Script dispatcher is used to select a response based on the incoming request.
 // Here are few examples showing how to match based on path, query param, header and body
 
@@ -51,7 +97,7 @@ if( requestBody.contains("some data") )
     return "Response N"
 }
 */
-</con:dispatchPath><con:response name="Default" id="6b70d881-6960-408c-86ec-35352b232d39" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent><![CDATA[[
+</con:dispatchPath><con:response name="All" id="6b70d881-6960-408c-86ec-35352b232d39" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent><![CDATA[[
       {
       "id": 1,
       "year": 2014,
@@ -52721,59 +52767,7 @@ if( requestBody.contains("some data") )
       },
       "title": "Greatest Hits"
    }
-]]]></con:responseContent></con:response></con:restMockAction><con:restMockAction name="/MusicLibrary/rest/albums/60" method="GET" resourcePath="/MusicLibrary/rest/albums/60" id="9a80bafb-7806-4028-bd79-7e947291ce1f"><con:settings/><con:defaultResponse>Default</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*
-// Script dispatcher is used to select a response based on the incoming request.
-// Here are few examples showing how to match based on path, query param, header and body
-
-// Match based on path
-def requestPath = mockRequest.getPath()
-log.info "Path: "+ requestPath
-
-if( requestPath.contains("json") )
-{
-    // return the name of the response you want to dispatch
-    return "JSON Response"
-}
-
-
-// Match based on query parameter
-def queryString = mockRequest.getRequest().getQueryString()
-log.info "QueryString: " + queryString
-
-if( queryString.contains("stockholm") )
-{
-    // return the name of the response you want to dispatch
-    return "Response Stockholm"
-}
-else if( queryString.contains("london") )
-{
-    // return the name of the response you want to dispatch
-    return "Response London"
-}
-
-
-// Match based on header
-def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")
-log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList
-
-if( acceptEncodingHeaderList.contains("gzip,deflate") )
-{
-    // return the name of the response you want to dispatch
-    return "GZiped Response"
-}
-
-
-// Match based on body
-def requestBody = mockRequest.getRequestContent()
-log.info "Request body: " + requestBody
-
-if( requestBody.contains("some data") )
-{
-    // return the name of the response you want to dispatch
-    return "Response N"
-}
-*/
-</con:dispatchPath><con:response name="Default" id="3f07392e-9c59-439b-8b39-250a2afef09e" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+]]]></con:responseContent></con:response><con:response name="60" id="02393fab-4f81-4a7b-bbbb-208a3b135c2e" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
    "id": 60,
    "year": 1980,
    "songs":    [
@@ -52831,59 +52825,7 @@ if( requestBody.contains("some data") )
       "id": 22
    },
    "title": "Heaven And Hell"
-}</con:responseContent></con:response></con:restMockAction><con:restMockAction name="/MusicLibrary/rest/albums/424" method="GET" resourcePath="/MusicLibrary/rest/albums/424" id="45b3a364-ce50-4fc7-8171-d4c8e6c5c6d5"><con:settings/><con:defaultResponse>Default</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*
-// Script dispatcher is used to select a response based on the incoming request.
-// Here are few examples showing how to match based on path, query param, header and body
-
-// Match based on path
-def requestPath = mockRequest.getPath()
-log.info "Path: "+ requestPath
-
-if( requestPath.contains("json") )
-{
-    // return the name of the response you want to dispatch
-    return "JSON Response"
-}
-
-
-// Match based on query parameter
-def queryString = mockRequest.getRequest().getQueryString()
-log.info "QueryString: " + queryString
-
-if( queryString.contains("stockholm") )
-{
-    // return the name of the response you want to dispatch
-    return "Response Stockholm"
-}
-else if( queryString.contains("london") )
-{
-    // return the name of the response you want to dispatch
-    return "Response London"
-}
-
-
-// Match based on header
-def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")
-log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList
-
-if( acceptEncodingHeaderList.contains("gzip,deflate") )
-{
-    // return the name of the response you want to dispatch
-    return "GZiped Response"
-}
-
-
-// Match based on body
-def requestBody = mockRequest.getRequestContent()
-log.info "Request body: " + requestBody
-
-if( requestBody.contains("some data") )
-{
-    // return the name of the response you want to dispatch
-    return "Response N"
-}
-*/
-</con:dispatchPath><con:response name="Default" id="3165c77c-1a7c-44be-8001-e569c2fa23c5" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+}</con:responseContent></con:response><con:response name="NotFound" id="ee7bbedb-fa22-4b31-8f18-88a5e31411b1" httpResponseStatus="404" mediaType="application/json"><con:settings/><con:responseContent>Album not found</con:responseContent></con:response><con:response name="424" id="bdd2deb3-e9a2-445c-88ce-694c7b707fa8" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
    "id": 424,
    "year": 1991,
    "songs":    [
@@ -53211,114 +53153,32 @@ if( requestBody.contains("some data") )
       "id": 166
    },
    "title": "StÃ¦rk tobak!!!"
-}</con:responseContent></con:response></con:restMockAction><con:restMockAction name="/MusicLibrary/rest/artists" method="GET" resourcePath="/MusicLibrary/rest/artists" id="d2c7d905-0b5e-4edf-a962-aa48d96d640a"><con:settings/><con:defaultResponse>Default</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*
-// Script dispatcher is used to select a response based on the incoming request.
-// Here are few examples showing how to match based on path, query param, header and body
-
-// Match based on path
-def requestPath = mockRequest.getPath()
+}</con:responseContent></con:response></con:restMockAction><con:restMockAction name="/rest/artists" method="GET" resourcePath="/rest/artists" id="d2c7d905-0b5e-4edf-a962-aa48d96d640a"><con:settings/><con:defaultResponse>Default</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>def requestPath = mockRequest.getPath()
 log.info "Path: "+ requestPath
+def resource = requestPath.split("/")[-1]
+requestPath.split("/")[-1]
 
-if( requestPath.contains("json") )
-{
-    // return the name of the response you want to dispatch
-    return "JSON Response"
+if(resource=="artists")
+  return "All"
+else if(resource=="219")
+  return "219"
+else if (resource=="albums") {
+  def artistId = requestPath.split("/")[-2]
+  log.info "ArtistID: "+ artistId
+  if(artistId=="219")
+    return "219Albums"
+  else if(artistId=="1")
+    return "1Albums"  
+  else
+    return "NotFound"   
 }
+else
+  return "NotFound"
 
-
-// Match based on query parameter
-def queryString = mockRequest.getRequest().getQueryString()
-log.info "QueryString: " + queryString
-
-if( queryString.contains("stockholm") )
-{
-    // return the name of the response you want to dispatch
-    return "Response Stockholm"
-}
-else if( queryString.contains("london") )
-{
-    // return the name of the response you want to dispatch
-    return "Response London"
-}
-
-
-// Match based on header
-def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")
-log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList
-
-if( acceptEncodingHeaderList.contains("gzip,deflate") )
-{
-    // return the name of the response you want to dispatch
-    return "GZiped Response"
-}
-
-
-// Match based on body
-def requestBody = mockRequest.getRequestContent()
-log.info "Request body: " + requestBody
-
-if( requestBody.contains("some data") )
-{
-    // return the name of the response you want to dispatch
-    return "Response N"
-}
-*/
-</con:dispatchPath><con:response name="Default" id="6d37f662-4cab-4107-b5e1-757209771764" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>[{"name":"5 Seconds Of Summer","id":1},{"name":"AC/DC","id":3},{"name":"Abstrakt Algebra","id":2},{"name":"Adele","id":4},{"name":"Aerosmith","id":5},{"name":"Alabama","id":6},{"name":"Alan Jackson","id":7},{"name":"Alcatrazz","id":8},{"name":"Alias","id":9},{"name":"Alice Cooper","id":10},{"name":"Alice in Chains","id":11},{"name":"Amy Grant","id":12},{"name":"Angel Witch","id":13},{"name":"Anthrax","id":14},{"name":"Avril Lavigne","id":15},{"name":"Bach, Johann Sebastian","id":16},{"name":"Bachman-Turner Overdrive","id":17},{"name":"Bad Company","id":18},{"name":"Beethoven, Ludwig van","id":19},{"name":"Billy Dean","id":20},{"name":"Billy Joel","id":21},{"name":"Black Sabbath","id":22},{"name":"Blue Ã–yster Cult","id":23},{"name":"Boston","id":24},{"name":"Brad Paisley","id":25},{"name":"Britney Spears","id":26},{"name":"Brooks &amp; Dunn","id":27},{"name":"Bryan Adams","id":28},{"name":"Cacophony","id":29},{"name":"Carrie Underwood","id":30},{"name":"Cassie","id":31},{"name":"Cathedral","id":32},{"name":"Cheap Trick","id":33},{"name":"Chicago","id":34},{"name":"Christina Aguilera","id":35},{"name":"Clint Black","id":36},{"name":"Cornerstone","id":37},{"name":"Cream","id":38},{"name":"Creedence Clearwater Revival","id":39},{"name":"Darius Rucker","id":40},{"name":"Darren Housholder","id":41},{"name":"David Lee Roth","id":42},{"name":"Deep Purple","id":43},{"name":"Def Leppard","id":44},{"name":"Diamond Head","id":45},{"name":"Diamond Rio","id":46},{"name":"Dio","id":47},{"name":"Dire Straits","id":48},{"name":"Disneyland After Dark","id":49},{"name":"Dixie Chicks","id":50},{"name":"Dokken","id":51},{"name":"Dream Theater","id":52},{"name":"Eagles","id":53},{"name":"Ed Sheeran","id":54},{"name":"Elton John","id":55},{"name":"Eric Clapton","id":56},{"name":"Europe","id":57},{"name":"Extreme","id":58},{"name":"Foghat","id":59},{"name":"Free","id":60},{"name":"Garth Brooks","id":61},{"name":"Gary Hoey","id":62},{"name":"Gary Moore","id":63},{"name":"Gasolin'","id":64},{"name":"George Michael","id":65},{"name":"Giant","id":66},{"name":"Glenn Tipton","id":67},{"name":"Grand Funk Railroad","id":68},{"name":"Greg Howe","id":69},{"name":"Guns N' Roses","id":70},{"name":"Gwen Stefani","id":71},{"name":"Harry Connick Jr.","id":72},{"name":"Heaven &amp; Hell","id":73},{"name":"Huey Lewis And The News","id":74},{"name":"Ian Gillan","id":75},{"name":"Information Society","id":76},{"name":"Iommi","id":77},{"name":"Iron Maiden","id":78},{"name":"James Byrd's Atlantis Rising","id":79},{"name":"Jason Becker","id":80},{"name":"Joe Cocker","id":82},{"name":"Joe Satriani","id":83},{"name":"Joey Moe","id":84},{"name":"Joey Tafolla","id":85},{"name":"John Michael Montgomery","id":86},{"name":"Johnny Madsen","id":87},{"name":"Jordin Sparks","id":88},{"name":"Journey","id":89},{"name":"Judas Priest","id":90},{"name":"Justin Bieber","id":91},{"name":"Kansas","id":92},{"name":"Katy Perry","id":93},{"name":"KenZiner","id":95},{"name":"Kenny G","id":94},{"name":"Kid Ink","id":96},{"name":"King's X","id":97},{"name":"Kingdom Come","id":98},{"name":"Kiss","id":99},{"name":"Led Zeppelin","id":100},{"name":"Leona Lewis","id":101},{"name":"Linkin Park","id":102},{"name":"Los Angeles Guitar Quartet","id":103},{"name":"Luke Bryan","id":104},{"name":"Lynch Mob","id":105},{"name":"Lynyrd Skynyrd","id":106},{"name":"M.A.R.S.","id":107},{"name":"M.S.G","id":108},{"name":"Maroon 5","id":109},{"name":"Marty Friedman","id":110},{"name":"Mary Chapin Carpenter","id":111},{"name":"Mary J. Blige","id":112},{"name":"Meat Loaf","id":113},{"name":"Megadeth","id":114},{"name":"Mendelssohn Bartholdy, Felix","id":115},{"name":"Merzy","id":116},{"name":"Metallica","id":117},{"name":"Miley Cyrus","id":118},{"name":"Miranda Lambert","id":119},{"name":"Molly Hatchet","id":120},{"name":"Montrose","id":121},{"name":"Motorhead","id":122},{"name":"Mozart, Wolfgang Amadeus","id":123},{"name":"Mr. Big","id":124},{"name":"Nazareth","id":125},{"name":"Nielsen, Carl","id":126},{"name":"Night Ranger","id":127},{"name":"Nirvana","id":128},{"name":"Nitty Gritty Dirt Band","id":129},{"name":"Ozzy Osbourne","id":130},{"name":"Paganini - Tartini","id":131},{"name":"Pantera","id":132},{"name":"Phil Collins","id":133},{"name":"Pink","id":134},{"name":"Pink Floyd","id":135},{"name":"Pixie Lott","id":136},{"name":"Poison","id":137},{"name":"Pretty Maids","id":138},{"name":"Queen","id":139},{"name":"QueensrÃ¿che","id":140},{"name":"Quiet Riot","id":141},{"name":"R.E.M.","id":142},{"name":"REO Speedwagon","id":149},{"name":"Racer X","id":143},{"name":"Rainbow","id":144},{"name":"Randy Travis","id":145},{"name":"Ratt","id":146},{"name":"Reba McEntire","id":147},{"name":"Rembrandts","id":148},{"name":"Rhapsody","id":150},{"name":"Richard Joo","id":151},{"name":"Rihanna","id":152},{"name":"Ronnie Dunn","id":153},{"name":"Rory Gallagher","id":154},{"name":"Rossini","id":155},{"name":"Roxette","id":156},{"name":"Royal Hunt","id":157},{"name":"Sammy Hagar","id":158},{"name":"Santana","id":159},{"name":"Savatage","id":160},{"name":"Sawyer Brown","id":161},{"name":"Saxon","id":162},{"name":"Scorpions","id":163},{"name":"Scott Joplin &amp; George Gershwin","id":164},{"name":"Sepultura","id":165},{"name":"Shu-bi-dua","id":166},{"name":"Skid Row","id":167},{"name":"Slade","id":168},{"name":"Slayer","id":169},{"name":"Smetana, Bedrich","id":170},{"name":"Solitude Aeturnus","id":171},{"name":"Soul Asylum","id":172},{"name":"Status Quo","id":173},{"name":"Steppenwolf","id":174},{"name":"Steve Jones","id":175},{"name":"Stevie Ray Vaughan","id":176},{"name":"Sting","id":177},{"name":"Stone Temple Pilots","id":178},{"name":"Stratovarius","id":179},{"name":"Styx","id":180},{"name":"Sugababes","id":181},{"name":"Suzy Bogguss","id":182},{"name":"Tchaikovsky, Peter","id":183},{"name":"Ten Years After","id":184},{"name":"Tesla","id":185},{"name":"Testament","id":186},{"name":"The Animals","id":187},{"name":"The Beatles","id":188},{"name":"The Black Crowes","id":189},{"name":"The Black Eyed Peas","id":190},{"name":"The Cheetah Girls","id":191},{"name":"The Doors","id":192},{"name":"The Eagles","id":193},{"name":"The Escape Club","id":194},{"name":"The Jeff Healey Band","id":195},{"name":"The Jimi Hendrix Experience","id":81},{"name":"The Kentucky Headhunters","id":196},{"name":"The Kinks","id":197},{"name":"The Moody Blues","id":198},{"name":"The Pussycat Dolls","id":199},{"name":"The Rods","id":200},{"name":"The Rolling Stones","id":201},{"name":"The Who","id":202},{"name":"Thin Lizzy","id":203},{"name":"Tom Petty","id":204},{"name":"Tony Fredianelli","id":205},{"name":"Tony MacAlpine","id":206},{"name":"Trans-Siberian Orchestra","id":207},{"name":"Triumph","id":208},{"name":"Trouble","id":209},{"name":"UFO","id":210},{"name":"Uriah Heep","id":211},{"name":"Van Halen","id":212},{"name":"Various","id":213},{"name":"Vinnie Moore","id":214},{"name":"Vivaldi, Antonio","id":215},{"name":"Whitesnake","id":216},{"name":"Y&amp;T","id":217},{"name":"Yellowcard","id":218},{"name":"Yngwie Malmsteen","id":219},{"name":"ZZ Top","id":220}]</con:responseContent><con:header><con:name>Date</con:name><con:value>Sun, 24 Apr 2016 20:19:17 GMT</con:value></con:header><con:header><con:name>Expires</con:name><con:value>Thu, 01 Dec 1994 16:00:00 GMT</con:value></con:header><con:header><con:name>Set-Cookie</con:name><con:value>JSESSIONID=0000msEQPoGGRBhtwRpIkn-BfbW:0f0b2c75-d742-4bd3-ba52-ad1cbb839de3; Path=/; HttpOnly</con:value></con:header><con:header><con:name>X-Powered-By</con:name><con:value>Servlet/3.1</con:value></con:header><con:header><con:name>Cache-Control</con:name><con:value>no-cache="set-cookie, set-cookie2"</con:value></con:header></con:response></con:restMockAction><con:restMockAction name="/MusicLibrary/rest/artists/219" method="GET" resourcePath="/MusicLibrary/rest/artists/219" id="478f4f79-9859-45ed-af12-3462d813eae9"><con:settings/><con:defaultResponse>Default</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*
-// Script dispatcher is used to select a response based on the incoming request.
-// Here are few examples showing how to match based on path, query param, header and body
-
-// Match based on path
-def requestPath = mockRequest.getPath()
-log.info "Path: "+ requestPath
-
-if( requestPath.contains("json") )
-{
-    // return the name of the response you want to dispatch
-    return "JSON Response"
-}
-
-
-// Match based on query parameter
-def queryString = mockRequest.getRequest().getQueryString()
-log.info "QueryString: " + queryString
-
-if( queryString.contains("stockholm") )
-{
-    // return the name of the response you want to dispatch
-    return "Response Stockholm"
-}
-else if( queryString.contains("london") )
-{
-    // return the name of the response you want to dispatch
-    return "Response London"
-}
-
-
-// Match based on header
-def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")
-log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList
-
-if( acceptEncodingHeaderList.contains("gzip,deflate") )
-{
-    // return the name of the response you want to dispatch
-    return "GZiped Response"
-}
-
-
-// Match based on body
-def requestBody = mockRequest.getRequestContent()
-log.info "Request body: " + requestBody
-
-if( requestBody.contains("some data") )
-{
-    // return the name of the response you want to dispatch
-    return "Response N"
-}
-*/
-</con:dispatchPath><con:response name="Default" id="c06ee21d-f90f-465c-94dc-4bbf501a7b95" httpResponseStatus="200"><con:settings/><con:responseContent>{
+</con:dispatchPath><con:response name="All" id="6d37f662-4cab-4107-b5e1-757209771764" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>[{"name":"5 Seconds Of Summer","id":1},{"name":"AC/DC","id":3},{"name":"Abstrakt Algebra","id":2},{"name":"Adele","id":4},{"name":"Aerosmith","id":5},{"name":"Alabama","id":6},{"name":"Alan Jackson","id":7},{"name":"Alcatrazz","id":8},{"name":"Alias","id":9},{"name":"Alice Cooper","id":10},{"name":"Alice in Chains","id":11},{"name":"Amy Grant","id":12},{"name":"Angel Witch","id":13},{"name":"Anthrax","id":14},{"name":"Avril Lavigne","id":15},{"name":"Bach, Johann Sebastian","id":16},{"name":"Bachman-Turner Overdrive","id":17},{"name":"Bad Company","id":18},{"name":"Beethoven, Ludwig van","id":19},{"name":"Billy Dean","id":20},{"name":"Billy Joel","id":21},{"name":"Black Sabbath","id":22},{"name":"Blue Ã–yster Cult","id":23},{"name":"Boston","id":24},{"name":"Brad Paisley","id":25},{"name":"Britney Spears","id":26},{"name":"Brooks &amp; Dunn","id":27},{"name":"Bryan Adams","id":28},{"name":"Cacophony","id":29},{"name":"Carrie Underwood","id":30},{"name":"Cassie","id":31},{"name":"Cathedral","id":32},{"name":"Cheap Trick","id":33},{"name":"Chicago","id":34},{"name":"Christina Aguilera","id":35},{"name":"Clint Black","id":36},{"name":"Cornerstone","id":37},{"name":"Cream","id":38},{"name":"Creedence Clearwater Revival","id":39},{"name":"Darius Rucker","id":40},{"name":"Darren Housholder","id":41},{"name":"David Lee Roth","id":42},{"name":"Deep Purple","id":43},{"name":"Def Leppard","id":44},{"name":"Diamond Head","id":45},{"name":"Diamond Rio","id":46},{"name":"Dio","id":47},{"name":"Dire Straits","id":48},{"name":"Disneyland After Dark","id":49},{"name":"Dixie Chicks","id":50},{"name":"Dokken","id":51},{"name":"Dream Theater","id":52},{"name":"Eagles","id":53},{"name":"Ed Sheeran","id":54},{"name":"Elton John","id":55},{"name":"Eric Clapton","id":56},{"name":"Europe","id":57},{"name":"Extreme","id":58},{"name":"Foghat","id":59},{"name":"Free","id":60},{"name":"Garth Brooks","id":61},{"name":"Gary Hoey","id":62},{"name":"Gary Moore","id":63},{"name":"Gasolin'","id":64},{"name":"George Michael","id":65},{"name":"Giant","id":66},{"name":"Glenn Tipton","id":67},{"name":"Grand Funk Railroad","id":68},{"name":"Greg Howe","id":69},{"name":"Guns N' Roses","id":70},{"name":"Gwen Stefani","id":71},{"name":"Harry Connick Jr.","id":72},{"name":"Heaven &amp; Hell","id":73},{"name":"Huey Lewis And The News","id":74},{"name":"Ian Gillan","id":75},{"name":"Information Society","id":76},{"name":"Iommi","id":77},{"name":"Iron Maiden","id":78},{"name":"James Byrd's Atlantis Rising","id":79},{"name":"Jason Becker","id":80},{"name":"Joe Cocker","id":82},{"name":"Joe Satriani","id":83},{"name":"Joey Moe","id":84},{"name":"Joey Tafolla","id":85},{"name":"John Michael Montgomery","id":86},{"name":"Johnny Madsen","id":87},{"name":"Jordin Sparks","id":88},{"name":"Journey","id":89},{"name":"Judas Priest","id":90},{"name":"Justin Bieber","id":91},{"name":"Kansas","id":92},{"name":"Katy Perry","id":93},{"name":"KenZiner","id":95},{"name":"Kenny G","id":94},{"name":"Kid Ink","id":96},{"name":"King's X","id":97},{"name":"Kingdom Come","id":98},{"name":"Kiss","id":99},{"name":"Led Zeppelin","id":100},{"name":"Leona Lewis","id":101},{"name":"Linkin Park","id":102},{"name":"Los Angeles Guitar Quartet","id":103},{"name":"Luke Bryan","id":104},{"name":"Lynch Mob","id":105},{"name":"Lynyrd Skynyrd","id":106},{"name":"M.A.R.S.","id":107},{"name":"M.S.G","id":108},{"name":"Maroon 5","id":109},{"name":"Marty Friedman","id":110},{"name":"Mary Chapin Carpenter","id":111},{"name":"Mary J. Blige","id":112},{"name":"Meat Loaf","id":113},{"name":"Megadeth","id":114},{"name":"Mendelssohn Bartholdy, Felix","id":115},{"name":"Merzy","id":116},{"name":"Metallica","id":117},{"name":"Miley Cyrus","id":118},{"name":"Miranda Lambert","id":119},{"name":"Molly Hatchet","id":120},{"name":"Montrose","id":121},{"name":"Motorhead","id":122},{"name":"Mozart, Wolfgang Amadeus","id":123},{"name":"Mr. Big","id":124},{"name":"Nazareth","id":125},{"name":"Nielsen, Carl","id":126},{"name":"Night Ranger","id":127},{"name":"Nirvana","id":128},{"name":"Nitty Gritty Dirt Band","id":129},{"name":"Ozzy Osbourne","id":130},{"name":"Paganini - Tartini","id":131},{"name":"Pantera","id":132},{"name":"Phil Collins","id":133},{"name":"Pink","id":134},{"name":"Pink Floyd","id":135},{"name":"Pixie Lott","id":136},{"name":"Poison","id":137},{"name":"Pretty Maids","id":138},{"name":"Queen","id":139},{"name":"QueensrÃ¿che","id":140},{"name":"Quiet Riot","id":141},{"name":"R.E.M.","id":142},{"name":"REO Speedwagon","id":149},{"name":"Racer X","id":143},{"name":"Rainbow","id":144},{"name":"Randy Travis","id":145},{"name":"Ratt","id":146},{"name":"Reba McEntire","id":147},{"name":"Rembrandts","id":148},{"name":"Rhapsody","id":150},{"name":"Richard Joo","id":151},{"name":"Rihanna","id":152},{"name":"Ronnie Dunn","id":153},{"name":"Rory Gallagher","id":154},{"name":"Rossini","id":155},{"name":"Roxette","id":156},{"name":"Royal Hunt","id":157},{"name":"Sammy Hagar","id":158},{"name":"Santana","id":159},{"name":"Savatage","id":160},{"name":"Sawyer Brown","id":161},{"name":"Saxon","id":162},{"name":"Scorpions","id":163},{"name":"Scott Joplin &amp; George Gershwin","id":164},{"name":"Sepultura","id":165},{"name":"Shu-bi-dua","id":166},{"name":"Skid Row","id":167},{"name":"Slade","id":168},{"name":"Slayer","id":169},{"name":"Smetana, Bedrich","id":170},{"name":"Solitude Aeturnus","id":171},{"name":"Soul Asylum","id":172},{"name":"Status Quo","id":173},{"name":"Steppenwolf","id":174},{"name":"Steve Jones","id":175},{"name":"Stevie Ray Vaughan","id":176},{"name":"Sting","id":177},{"name":"Stone Temple Pilots","id":178},{"name":"Stratovarius","id":179},{"name":"Styx","id":180},{"name":"Sugababes","id":181},{"name":"Suzy Bogguss","id":182},{"name":"Tchaikovsky, Peter","id":183},{"name":"Ten Years After","id":184},{"name":"Tesla","id":185},{"name":"Testament","id":186},{"name":"The Animals","id":187},{"name":"The Beatles","id":188},{"name":"The Black Crowes","id":189},{"name":"The Black Eyed Peas","id":190},{"name":"The Cheetah Girls","id":191},{"name":"The Doors","id":192},{"name":"The Eagles","id":193},{"name":"The Escape Club","id":194},{"name":"The Jeff Healey Band","id":195},{"name":"The Jimi Hendrix Experience","id":81},{"name":"The Kentucky Headhunters","id":196},{"name":"The Kinks","id":197},{"name":"The Moody Blues","id":198},{"name":"The Pussycat Dolls","id":199},{"name":"The Rods","id":200},{"name":"The Rolling Stones","id":201},{"name":"The Who","id":202},{"name":"Thin Lizzy","id":203},{"name":"Tom Petty","id":204},{"name":"Tony Fredianelli","id":205},{"name":"Tony MacAlpine","id":206},{"name":"Trans-Siberian Orchestra","id":207},{"name":"Triumph","id":208},{"name":"Trouble","id":209},{"name":"UFO","id":210},{"name":"Uriah Heep","id":211},{"name":"Van Halen","id":212},{"name":"Various","id":213},{"name":"Vinnie Moore","id":214},{"name":"Vivaldi, Antonio","id":215},{"name":"Whitesnake","id":216},{"name":"Y&amp;T","id":217},{"name":"Yellowcard","id":218},{"name":"Yngwie Malmsteen","id":219},{"name":"ZZ Top","id":220}]</con:responseContent><con:header><con:name>Date</con:name><con:value>Sun, 24 Apr 2016 20:19:17 GMT</con:value></con:header><con:header><con:name>Expires</con:name><con:value>Thu, 01 Dec 1994 16:00:00 GMT</con:value></con:header><con:header><con:name>Set-Cookie</con:name><con:value>JSESSIONID=0000msEQPoGGRBhtwRpIkn-BfbW:0f0b2c75-d742-4bd3-ba52-ad1cbb839de3; Path=/; HttpOnly</con:value></con:header><con:header><con:name>X-Powered-By</con:name><con:value>Servlet/3.1</con:value></con:header><con:header><con:name>Cache-Control</con:name><con:value>no-cache="set-cookie, set-cookie2"</con:value></con:header></con:response><con:response name="219" id="5853a325-9c03-4197-a292-ee7b8d8e8cbc" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
    "name": "Yngwie Malmsteen",
    "id": 219
-}</con:responseContent></con:response></con:restMockAction><con:restMockAction name="/MusicLibrary/rest/artists/219/albums" method="GET" resourcePath="/MusicLibrary/rest/artists/219/albums" id="fe7ff0c4-d60e-4b8b-8ca3-d7c8bf840ab6"><con:settings/><con:defaultResponse>Default</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*
+}</con:responseContent></con:response><con:response name="NotFound" id="48bb0fa0-e2d7-49d4-a050-dd340545addb" httpResponseStatus="404" mediaType="application/json"><con:settings/><con:responseContent/></con:response><con:response name="219Albums" id="6f8a7df5-687a-4d22-8482-b5db9ff8df6a" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>[{"id":584,"year":1984,"songs":[{"id":7485,"disc":1,"track":1,"title":"Black Star"},{"id":7486,"disc":1,"track":2,"title":"Far beyond the Sun"},{"id":7487,"disc":1,"track":3,"title":"Now your ships are burned"},{"id":7488,"disc":1,"track":4,"title":"Evil Eye"},{"id":7489,"disc":1,"track":5,"title":"Icarus' Dream Suite Op.4"},{"id":7490,"disc":1,"track":6,"title":"As above, So below"},{"id":7491,"disc":1,"track":7,"title":"Little Savage"},{"id":7492,"disc":1,"track":8,"title":"Farewell"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"Rising Force"},{"id":585,"year":1985,"songs":[{"id":7493,"disc":1,"track":1,"title":"Prelude"},{"id":7494,"disc":1,"track":2,"title":"I'll See The Light, Tonight"},{"id":7495,"disc":1,"track":3,"title":"Don't Let It End"},{"id":7496,"disc":1,"track":4,"title":"Disciples Of Hell"},{"id":7497,"disc":1,"track":5,"title":"I Am A Viking"},{"id":7498,"disc":1,"track":6,"title":"Overture 1383"},{"id":7499,"disc":1,"track":7,"title":"Anguish And Fear"},{"id":7500,"disc":1,"track":8,"title":"On The Run Again"},{"id":7501,"disc":1,"track":9,"title":"Soldier Without Faith"},{"id":7502,"disc":1,"track":10,"title":"Caught In The Middle"},{"id":7503,"disc":1,"track":11,"title":"Marching Out"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"Marching Out"},{"id":586,"year":1986,"songs":[{"id":7504,"disc":1,"track":1,"title":"You Don't Remember, I'll Never Forget"},{"id":7505,"disc":1,"track":2,"title":"Liar"},{"id":7506,"disc":1,"track":3,"title":"Queen In Love"},{"id":7507,"disc":1,"track":4,"title":"Crying"},{"id":7508,"disc":1,"track":5,"title":"Fury"},{"id":7509,"disc":1,"track":6,"title":"Fire"},{"id":7510,"disc":1,"track":7,"title":"Magic Mirror"},{"id":7511,"disc":1,"track":8,"title":"Dark Ages"},{"id":7512,"disc":1,"track":9,"title":"Trilogy Suite Op:5"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"Trilogy"},{"id":587,"year":1988,"songs":[{"id":7513,"disc":1,"track":1,"title":"Rising Force"},{"id":7514,"disc":1,"track":2,"title":"Hold On"},{"id":7515,"disc":1,"track":3,"title":"Heaven Tonight"},{"id":7516,"disc":1,"track":4,"title":"Dreaming (Tell Me)"},{"id":7517,"disc":1,"track":5,"title":"Bite the Bullet"},{"id":7518,"disc":1,"track":6,"title":"Riot in the Dungeons"},{"id":7519,"disc":1,"track":7,"title":"Deja Vu"},{"id":7520,"disc":1,"track":8,"title":"Crystal Ball"},{"id":7521,"disc":1,"track":9,"title":"Now is the Time"},{"id":7522,"disc":1,"track":10,"title":"Faster Than the Speed of Light"},{"id":7523,"disc":1,"track":11,"title":"Krakatau"},{"id":7524,"disc":1,"track":12,"title":"Memories"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"Odyssey"},{"id":588,"year":1990,"songs":[{"id":7525,"disc":1,"track":1,"title":"Making Love"},{"id":7526,"disc":1,"track":2,"title":"Bedroom Eyes"},{"id":7527,"disc":1,"track":3,"title":"Save Our Love"},{"id":7528,"disc":1,"track":4,"title":"Motherless Child"},{"id":7529,"disc":1,"track":5,"title":"Devil In Disguise"},{"id":7530,"disc":1,"track":6,"title":"Judas"},{"id":7531,"disc":1,"track":7,"title":"What Do You Want"},{"id":7532,"disc":1,"track":8,"title":"Demon Driver"},{"id":7533,"disc":1,"track":9,"title":"Faultline"},{"id":7534,"disc":1,"track":10,"title":"See You In Hell (Don't Be Late)"},{"id":7535,"disc":1,"track":11,"title":"Eclipse"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"Eclipse"},{"id":589,"year":1991,"songs":[{"id":7536,"disc":1,"track":1,"title":"Black Star"},{"id":7537,"disc":1,"track":2,"title":"Far Beyond The Sun"},{"id":7538,"disc":1,"track":3,"title":"I'll See The Light Tonight"},{"id":7539,"disc":1,"track":4,"title":"You Don't Remember, I'll Never Forget"},{"id":7540,"disc":1,"track":5,"title":"Liar"},{"id":7541,"disc":1,"track":6,"title":"Queen In Love"},{"id":7542,"disc":1,"track":7,"title":"Hold On"},{"id":7543,"disc":1,"track":8,"title":"Heaven Tonight"},{"id":7544,"disc":1,"track":9,"title":"Deja Vu"},{"id":7545,"disc":1,"track":10,"title":"Guitar Solo"},{"id":7546,"disc":1,"track":11,"title":"Spanish Castle Magic"},{"id":7547,"disc":1,"track":12,"title":"Judas"},{"id":7548,"disc":1,"track":13,"title":"Making Love"},{"id":7549,"disc":1,"track":14,"title":"Eclipse"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"The Yngwie Malmsteen Collection"},{"id":590,"year":1992,"songs":[{"id":7550,"disc":1,"track":1,"title":"Perpetual"},{"id":7551,"disc":1,"track":2,"title":"Dragonfly"},{"id":7552,"disc":1,"track":3,"title":"Teaser"},{"id":7553,"disc":1,"track":4,"title":"How Many Miles To Babylon"},{"id":7554,"disc":1,"track":5,"title":"Cry No More"},{"id":7555,"disc":1,"track":6,"title":"No Mercy"},{"id":7556,"disc":1,"track":7,"title":"C'est La Vie"},{"id":7557,"disc":1,"track":8,"title":"Leviathan"},{"id":7558,"disc":1,"track":9,"title":"Fire And Ice"},{"id":7559,"disc":1,"track":10,"title":"Forever Is A Long Time"},{"id":7560,"disc":1,"track":11,"title":"I'm My Own Enemy"},{"id":7561,"disc":1,"track":12,"title":"All I Want Is Everything"},{"id":7562,"disc":1,"track":13,"title":"Golden Dawn"},{"id":7563,"disc":1,"track":14,"title":"Final Curtain"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"Fire And Ice"},{"id":591,"year":1994,"songs":[{"id":7564,"disc":1,"track":1,"title":"Never Die"},{"id":7565,"disc":1,"track":2,"title":"I Don't Know"},{"id":7566,"disc":1,"track":3,"title":"Meant To Be"},{"id":7567,"disc":1,"track":4,"title":"Forever One"},{"id":7568,"disc":1,"track":5,"title":"Hairtrigger"},{"id":7569,"disc":1,"track":6,"title":"Brothers"},{"id":7570,"disc":1,"track":7,"title":"Seventh Sign"},{"id":7571,"disc":1,"track":8,"title":"Bad Blood"},{"id":7572,"disc":1,"track":9,"title":"Prisoner Of Your Love"},{"id":7573,"disc":1,"track":10,"title":"Pyramid Of Cheops"},{"id":7574,"disc":1,"track":11,"title":"Crash And Burn"},{"id":7575,"disc":1,"track":12,"title":"Sorrow"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"The Seventh Sign"},{"id":592,"year":1995,"songs":[{"id":7576,"disc":1,"track":1,"title":"Vengeance"},{"id":7577,"disc":1,"track":2,"title":"No Love Lost"},{"id":7578,"disc":1,"track":3,"title":"Tomorrow's Gone"},{"id":7579,"disc":1,"track":4,"title":"The Only One"},{"id":7580,"disc":1,"track":5,"title":"I'd Die Without You"},{"id":7581,"disc":1,"track":6,"title":"Overture 1622"},{"id":7582,"disc":1,"track":7,"title":"Voodoo"},{"id":7583,"disc":1,"track":8,"title":"Cross The Line"},{"id":7584,"disc":1,"track":9,"title":"Time Will Tell"},{"id":7585,"disc":1,"track":10,"title":"Fire In The Sky"},{"id":7586,"disc":1,"track":11,"title":"Amberdawn"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"Magnum Opus"},{"id":593,"year":1996,"songs":[{"id":7587,"disc":1,"track":1,"title":"Carry On Wayward Son"},{"id":7588,"disc":1,"track":2,"title":"Pictures Of Home"},{"id":7589,"disc":1,"track":3,"title":"Gates Of Babylon"},{"id":7590,"disc":1,"track":4,"title":"Manic Depression"},{"id":7591,"disc":1,"track":5,"title":"In the Dead Of Night"},{"id":7592,"disc":1,"track":6,"title":"Mistreated"},{"id":7593,"disc":1,"track":7,"title":"The Sails Of Charon"},{"id":7594,"disc":1,"track":8,"title":"Demon's Eye"},{"id":7595,"disc":1,"track":9,"title":"Anthem"},{"id":7596,"disc":1,"track":10,"title":"Child In Time"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"Inspiration"},{"id":594,"year":1998,"songs":[{"id":7597,"disc":1,"track":1,"title":"Icarus Dream Fanfare"},{"id":7598,"disc":1,"track":2,"title":"Cavallino Rampante"},{"id":7599,"disc":1,"track":3,"title":"Fugue"},{"id":7600,"disc":1,"track":4,"title":"Prelude To April"},{"id":7601,"disc":1,"track":5,"title":"Toccata"},{"id":7602,"disc":1,"track":6,"title":"Andante"},{"id":7603,"disc":1,"track":7,"title":"Sarabande"},{"id":7604,"disc":1,"track":8,"title":"Allegro"},{"id":7605,"disc":1,"track":9,"title":"Adagio"},{"id":7606,"disc":1,"track":10,"title":"Vivace"},{"id":7607,"disc":1,"track":11,"title":"Presto Vivace"},{"id":7608,"disc":1,"track":12,"title":"Finale"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"Concerto Suite for Electric Guitar and Orchestra in E flat minor Op.1 -Millennium-"},{"id":595,"year":1998,"songs":[{"id":7609,"disc":1,"track":1,"title":"Braveheart"},{"id":7610,"disc":1,"track":2,"title":"Facing The Animal"},{"id":7611,"disc":1,"track":3,"title":"Enemy"},{"id":7612,"disc":1,"track":4,"title":"Sacrifice"},{"id":7613,"disc":1,"track":5,"title":"Like An Angel"},{"id":7614,"disc":1,"track":6,"title":"My Resurrection"},{"id":7615,"disc":1,"track":7,"title":"Another Time"},{"id":7616,"disc":1,"track":8,"title":"Heathens From The North"},{"id":7617,"disc":1,"track":9,"title":"Alone In Paradise"},{"id":7618,"disc":1,"track":10,"title":"End Of My Rope"},{"id":7619,"disc":1,"track":11,"title":"Only The Strong"},{"id":7620,"disc":1,"track":12,"title":"Poison In Your Veins"},{"id":7621,"disc":1,"track":13,"title":"Air On A Theme"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"Facing the Animal"},{"id":596,"year":2000,"songs":[{"id":7622,"disc":1,"track":1,"title":"Prophet Of Doom"},{"id":7623,"disc":1,"track":2,"title":"Crucify"},{"id":7624,"disc":1,"track":3,"title":"Bad Reputation"},{"id":7625,"disc":1,"track":4,"title":"Catch 22"},{"id":7626,"disc":1,"track":5,"title":"Masquerade"},{"id":7627,"disc":1,"track":6,"title":"Molto Arpeggiosa"},{"id":7628,"disc":1,"track":7,"title":"Miracle Of Life"},{"id":7629,"disc":1,"track":8,"title":"The Wizard"},{"id":7630,"disc":1,"track":9,"title":"Preludium"},{"id":7631,"disc":1,"track":10,"title":"Wild One"},{"id":7632,"disc":1,"track":11,"title":"Tarot"},{"id":7633,"disc":1,"track":12,"title":"Instrumental Institution"},{"id":7634,"disc":1,"track":13,"title":"War To End All Wars"},{"id":7635,"disc":1,"track":14,"title":"Black Sheep Of The Family (bonus track)"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"War To End All Wars"},{"id":597,"year":2002,"songs":[{"id":7636,"disc":1,"track":1,"title":"Razor Eater"},{"id":7637,"disc":1,"track":2,"title":"Rise Up"},{"id":7638,"disc":1,"track":3,"title":"Valley Of Kings"},{"id":7639,"disc":1,"track":4,"title":"Ship Of Fools"},{"id":7640,"disc":1,"track":5,"title":"Attack!"},{"id":7641,"disc":1,"track":6,"title":"Baroque &amp; Roll (Instrumental)"},{"id":7642,"disc":1,"track":7,"title":"Stronghold"},{"id":7643,"disc":1,"track":8,"title":"Mad Dog"},{"id":7644,"disc":1,"track":9,"title":"In The Name Of God"},{"id":7645,"disc":1,"track":10,"title":"Freedom Isn't Free"},{"id":7646,"disc":1,"track":11,"title":"Majestic Blue (Instrumental)"},{"id":7647,"disc":1,"track":12,"title":"Valhalla"},{"id":7648,"disc":1,"track":13,"title":"Touch The Sky"},{"id":7649,"disc":1,"track":14,"title":"Iron Clad"},{"id":7650,"disc":1,"track":15,"title":"Air (Instrumental)"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"Attack!!"},{"id":598,"year":2008,"songs":[{"id":7651,"disc":1,"track":1,"title":"Death Dealer"},{"id":7652,"disc":1,"track":2,"title":"Damnation Game"},{"id":7653,"disc":1,"track":3,"title":"Live To Fight (Another Day)"},{"id":7654,"disc":1,"track":4,"title":"Red Devil"},{"id":7655,"disc":1,"track":5,"title":"Four Horsemen (of the Apocalypse)"},{"id":7656,"disc":1,"track":6,"title":"Priest of the Unholy"},{"id":7657,"disc":1,"track":7,"title":"Be Careful What You Wish For"},{"id":7658,"disc":1,"track":8,"title":"Caprici Di Diablo"},{"id":7659,"disc":1,"track":9,"title":"Lament"},{"id":7660,"disc":1,"track":10,"title":"Magic City"},{"id":7661,"disc":1,"track":11,"title":"Eleventh Hour"},{"id":7662,"disc":1,"track":12,"title":"Heavy Heart"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"Perpetual Flame"}]</con:responseContent></con:response><con:response name="1Albums" id="9467e8bf-5b20-48e5-b5ea-f4c8000cfc01" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>[{"id":1,"artist":{"id":1,"name":"5 Seconds Of Summer"},"title":"5 Seconds Of Summer","year":2014,"songs":[{"id":1,"title":"She Looks So Perfect","track":1,"disc":1},{"id":2,"title":"Don t Stop","track":2,"disc":1},{"id":3,"title":"Good Girls","track":3,"disc":1},{"id":4,"title":"Kiss Me Kiss Me","track":4,"disc":1},{"id":5,"title":"18","track":5,"disc":1},{"id":6,"title":"Everything I Didn t Say","track":6,"disc":1},{"id":7,"title":"Beside You","track":7,"disc":1},{"id":8,"title":"End Up Here","track":8,"disc":1},{"id":9,"title":"Long Way Home","track":9,"disc":1},{"id":10,"title":"Heartbreak Girl","track":10,"disc":1},{"id":11,"title":"English Love Affair","track":11,"disc":1},{"id":12,"title":"Amnesia","track":12,"disc":1},{"id":13,"title":"Social Casualty","track":13,"disc":1},{"id":14,"title":"Never Be","track":14,"disc":1},{"id":15,"title":"Voodoo Doll","track":15,"disc":1}]}]</con:responseContent></con:response></con:restMockAction><con:restMockAction name="/rest/artists" method="POST" resourcePath="/rest/artists" id="7fbf5abf-fb01-467c-a4e5-8171845cbf16"><con:settings/><con:defaultResponse>CreateDummies</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*
 // Script dispatcher is used to select a response based on the incoming request.
 // Here are few examples showing how to match based on path, query param, header and body
 
@@ -53370,4 +53230,59 @@ if( requestBody.contains("some data") )
     return "Response N"
 }
 */
-</con:dispatchPath><con:response name="Default" id="26f0745e-3a75-4268-8c5c-268da1786f7c" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>[{"id":584,"year":1984,"songs":[{"id":7485,"disc":1,"track":1,"title":"Black Star"},{"id":7486,"disc":1,"track":2,"title":"Far beyond the Sun"},{"id":7487,"disc":1,"track":3,"title":"Now your ships are burned"},{"id":7488,"disc":1,"track":4,"title":"Evil Eye"},{"id":7489,"disc":1,"track":5,"title":"Icarus' Dream Suite Op.4"},{"id":7490,"disc":1,"track":6,"title":"As above, So below"},{"id":7491,"disc":1,"track":7,"title":"Little Savage"},{"id":7492,"disc":1,"track":8,"title":"Farewell"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"Rising Force"},{"id":585,"year":1985,"songs":[{"id":7493,"disc":1,"track":1,"title":"Prelude"},{"id":7494,"disc":1,"track":2,"title":"I'll See The Light, Tonight"},{"id":7495,"disc":1,"track":3,"title":"Don't Let It End"},{"id":7496,"disc":1,"track":4,"title":"Disciples Of Hell"},{"id":7497,"disc":1,"track":5,"title":"I Am A Viking"},{"id":7498,"disc":1,"track":6,"title":"Overture 1383"},{"id":7499,"disc":1,"track":7,"title":"Anguish And Fear"},{"id":7500,"disc":1,"track":8,"title":"On The Run Again"},{"id":7501,"disc":1,"track":9,"title":"Soldier Without Faith"},{"id":7502,"disc":1,"track":10,"title":"Caught In The Middle"},{"id":7503,"disc":1,"track":11,"title":"Marching Out"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"Marching Out"},{"id":586,"year":1986,"songs":[{"id":7504,"disc":1,"track":1,"title":"You Don't Remember, I'll Never Forget"},{"id":7505,"disc":1,"track":2,"title":"Liar"},{"id":7506,"disc":1,"track":3,"title":"Queen In Love"},{"id":7507,"disc":1,"track":4,"title":"Crying"},{"id":7508,"disc":1,"track":5,"title":"Fury"},{"id":7509,"disc":1,"track":6,"title":"Fire"},{"id":7510,"disc":1,"track":7,"title":"Magic Mirror"},{"id":7511,"disc":1,"track":8,"title":"Dark Ages"},{"id":7512,"disc":1,"track":9,"title":"Trilogy Suite Op:5"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"Trilogy"},{"id":587,"year":1988,"songs":[{"id":7513,"disc":1,"track":1,"title":"Rising Force"},{"id":7514,"disc":1,"track":2,"title":"Hold On"},{"id":7515,"disc":1,"track":3,"title":"Heaven Tonight"},{"id":7516,"disc":1,"track":4,"title":"Dreaming (Tell Me)"},{"id":7517,"disc":1,"track":5,"title":"Bite the Bullet"},{"id":7518,"disc":1,"track":6,"title":"Riot in the Dungeons"},{"id":7519,"disc":1,"track":7,"title":"Deja Vu"},{"id":7520,"disc":1,"track":8,"title":"Crystal Ball"},{"id":7521,"disc":1,"track":9,"title":"Now is the Time"},{"id":7522,"disc":1,"track":10,"title":"Faster Than the Speed of Light"},{"id":7523,"disc":1,"track":11,"title":"Krakatau"},{"id":7524,"disc":1,"track":12,"title":"Memories"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"Odyssey"},{"id":588,"year":1990,"songs":[{"id":7525,"disc":1,"track":1,"title":"Making Love"},{"id":7526,"disc":1,"track":2,"title":"Bedroom Eyes"},{"id":7527,"disc":1,"track":3,"title":"Save Our Love"},{"id":7528,"disc":1,"track":4,"title":"Motherless Child"},{"id":7529,"disc":1,"track":5,"title":"Devil In Disguise"},{"id":7530,"disc":1,"track":6,"title":"Judas"},{"id":7531,"disc":1,"track":7,"title":"What Do You Want"},{"id":7532,"disc":1,"track":8,"title":"Demon Driver"},{"id":7533,"disc":1,"track":9,"title":"Faultline"},{"id":7534,"disc":1,"track":10,"title":"See You In Hell (Don't Be Late)"},{"id":7535,"disc":1,"track":11,"title":"Eclipse"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"Eclipse"},{"id":589,"year":1991,"songs":[{"id":7536,"disc":1,"track":1,"title":"Black Star"},{"id":7537,"disc":1,"track":2,"title":"Far Beyond The Sun"},{"id":7538,"disc":1,"track":3,"title":"I'll See The Light Tonight"},{"id":7539,"disc":1,"track":4,"title":"You Don't Remember, I'll Never Forget"},{"id":7540,"disc":1,"track":5,"title":"Liar"},{"id":7541,"disc":1,"track":6,"title":"Queen In Love"},{"id":7542,"disc":1,"track":7,"title":"Hold On"},{"id":7543,"disc":1,"track":8,"title":"Heaven Tonight"},{"id":7544,"disc":1,"track":9,"title":"Deja Vu"},{"id":7545,"disc":1,"track":10,"title":"Guitar Solo"},{"id":7546,"disc":1,"track":11,"title":"Spanish Castle Magic"},{"id":7547,"disc":1,"track":12,"title":"Judas"},{"id":7548,"disc":1,"track":13,"title":"Making Love"},{"id":7549,"disc":1,"track":14,"title":"Eclipse"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"The Yngwie Malmsteen Collection"},{"id":590,"year":1992,"songs":[{"id":7550,"disc":1,"track":1,"title":"Perpetual"},{"id":7551,"disc":1,"track":2,"title":"Dragonfly"},{"id":7552,"disc":1,"track":3,"title":"Teaser"},{"id":7553,"disc":1,"track":4,"title":"How Many Miles To Babylon"},{"id":7554,"disc":1,"track":5,"title":"Cry No More"},{"id":7555,"disc":1,"track":6,"title":"No Mercy"},{"id":7556,"disc":1,"track":7,"title":"C'est La Vie"},{"id":7557,"disc":1,"track":8,"title":"Leviathan"},{"id":7558,"disc":1,"track":9,"title":"Fire And Ice"},{"id":7559,"disc":1,"track":10,"title":"Forever Is A Long Time"},{"id":7560,"disc":1,"track":11,"title":"I'm My Own Enemy"},{"id":7561,"disc":1,"track":12,"title":"All I Want Is Everything"},{"id":7562,"disc":1,"track":13,"title":"Golden Dawn"},{"id":7563,"disc":1,"track":14,"title":"Final Curtain"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"Fire And Ice"},{"id":591,"year":1994,"songs":[{"id":7564,"disc":1,"track":1,"title":"Never Die"},{"id":7565,"disc":1,"track":2,"title":"I Don't Know"},{"id":7566,"disc":1,"track":3,"title":"Meant To Be"},{"id":7567,"disc":1,"track":4,"title":"Forever One"},{"id":7568,"disc":1,"track":5,"title":"Hairtrigger"},{"id":7569,"disc":1,"track":6,"title":"Brothers"},{"id":7570,"disc":1,"track":7,"title":"Seventh Sign"},{"id":7571,"disc":1,"track":8,"title":"Bad Blood"},{"id":7572,"disc":1,"track":9,"title":"Prisoner Of Your Love"},{"id":7573,"disc":1,"track":10,"title":"Pyramid Of Cheops"},{"id":7574,"disc":1,"track":11,"title":"Crash And Burn"},{"id":7575,"disc":1,"track":12,"title":"Sorrow"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"The Seventh Sign"},{"id":592,"year":1995,"songs":[{"id":7576,"disc":1,"track":1,"title":"Vengeance"},{"id":7577,"disc":1,"track":2,"title":"No Love Lost"},{"id":7578,"disc":1,"track":3,"title":"Tomorrow's Gone"},{"id":7579,"disc":1,"track":4,"title":"The Only One"},{"id":7580,"disc":1,"track":5,"title":"I'd Die Without You"},{"id":7581,"disc":1,"track":6,"title":"Overture 1622"},{"id":7582,"disc":1,"track":7,"title":"Voodoo"},{"id":7583,"disc":1,"track":8,"title":"Cross The Line"},{"id":7584,"disc":1,"track":9,"title":"Time Will Tell"},{"id":7585,"disc":1,"track":10,"title":"Fire In The Sky"},{"id":7586,"disc":1,"track":11,"title":"Amberdawn"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"Magnum Opus"},{"id":593,"year":1996,"songs":[{"id":7587,"disc":1,"track":1,"title":"Carry On Wayward Son"},{"id":7588,"disc":1,"track":2,"title":"Pictures Of Home"},{"id":7589,"disc":1,"track":3,"title":"Gates Of Babylon"},{"id":7590,"disc":1,"track":4,"title":"Manic Depression"},{"id":7591,"disc":1,"track":5,"title":"In the Dead Of Night"},{"id":7592,"disc":1,"track":6,"title":"Mistreated"},{"id":7593,"disc":1,"track":7,"title":"The Sails Of Charon"},{"id":7594,"disc":1,"track":8,"title":"Demon's Eye"},{"id":7595,"disc":1,"track":9,"title":"Anthem"},{"id":7596,"disc":1,"track":10,"title":"Child In Time"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"Inspiration"},{"id":594,"year":1998,"songs":[{"id":7597,"disc":1,"track":1,"title":"Icarus Dream Fanfare"},{"id":7598,"disc":1,"track":2,"title":"Cavallino Rampante"},{"id":7599,"disc":1,"track":3,"title":"Fugue"},{"id":7600,"disc":1,"track":4,"title":"Prelude To April"},{"id":7601,"disc":1,"track":5,"title":"Toccata"},{"id":7602,"disc":1,"track":6,"title":"Andante"},{"id":7603,"disc":1,"track":7,"title":"Sarabande"},{"id":7604,"disc":1,"track":8,"title":"Allegro"},{"id":7605,"disc":1,"track":9,"title":"Adagio"},{"id":7606,"disc":1,"track":10,"title":"Vivace"},{"id":7607,"disc":1,"track":11,"title":"Presto Vivace"},{"id":7608,"disc":1,"track":12,"title":"Finale"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"Concerto Suite for Electric Guitar and Orchestra in E flat minor Op.1 -Millennium-"},{"id":595,"year":1998,"songs":[{"id":7609,"disc":1,"track":1,"title":"Braveheart"},{"id":7610,"disc":1,"track":2,"title":"Facing The Animal"},{"id":7611,"disc":1,"track":3,"title":"Enemy"},{"id":7612,"disc":1,"track":4,"title":"Sacrifice"},{"id":7613,"disc":1,"track":5,"title":"Like An Angel"},{"id":7614,"disc":1,"track":6,"title":"My Resurrection"},{"id":7615,"disc":1,"track":7,"title":"Another Time"},{"id":7616,"disc":1,"track":8,"title":"Heathens From The North"},{"id":7617,"disc":1,"track":9,"title":"Alone In Paradise"},{"id":7618,"disc":1,"track":10,"title":"End Of My Rope"},{"id":7619,"disc":1,"track":11,"title":"Only The Strong"},{"id":7620,"disc":1,"track":12,"title":"Poison In Your Veins"},{"id":7621,"disc":1,"track":13,"title":"Air On A Theme"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"Facing the Animal"},{"id":596,"year":2000,"songs":[{"id":7622,"disc":1,"track":1,"title":"Prophet Of Doom"},{"id":7623,"disc":1,"track":2,"title":"Crucify"},{"id":7624,"disc":1,"track":3,"title":"Bad Reputation"},{"id":7625,"disc":1,"track":4,"title":"Catch 22"},{"id":7626,"disc":1,"track":5,"title":"Masquerade"},{"id":7627,"disc":1,"track":6,"title":"Molto Arpeggiosa"},{"id":7628,"disc":1,"track":7,"title":"Miracle Of Life"},{"id":7629,"disc":1,"track":8,"title":"The Wizard"},{"id":7630,"disc":1,"track":9,"title":"Preludium"},{"id":7631,"disc":1,"track":10,"title":"Wild One"},{"id":7632,"disc":1,"track":11,"title":"Tarot"},{"id":7633,"disc":1,"track":12,"title":"Instrumental Institution"},{"id":7634,"disc":1,"track":13,"title":"War To End All Wars"},{"id":7635,"disc":1,"track":14,"title":"Black Sheep Of The Family (bonus track)"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"War To End All Wars"},{"id":597,"year":2002,"songs":[{"id":7636,"disc":1,"track":1,"title":"Razor Eater"},{"id":7637,"disc":1,"track":2,"title":"Rise Up"},{"id":7638,"disc":1,"track":3,"title":"Valley Of Kings"},{"id":7639,"disc":1,"track":4,"title":"Ship Of Fools"},{"id":7640,"disc":1,"track":5,"title":"Attack!"},{"id":7641,"disc":1,"track":6,"title":"Baroque &amp; Roll (Instrumental)"},{"id":7642,"disc":1,"track":7,"title":"Stronghold"},{"id":7643,"disc":1,"track":8,"title":"Mad Dog"},{"id":7644,"disc":1,"track":9,"title":"In The Name Of God"},{"id":7645,"disc":1,"track":10,"title":"Freedom Isn't Free"},{"id":7646,"disc":1,"track":11,"title":"Majestic Blue (Instrumental)"},{"id":7647,"disc":1,"track":12,"title":"Valhalla"},{"id":7648,"disc":1,"track":13,"title":"Touch The Sky"},{"id":7649,"disc":1,"track":14,"title":"Iron Clad"},{"id":7650,"disc":1,"track":15,"title":"Air (Instrumental)"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"Attack!!"},{"id":598,"year":2008,"songs":[{"id":7651,"disc":1,"track":1,"title":"Death Dealer"},{"id":7652,"disc":1,"track":2,"title":"Damnation Game"},{"id":7653,"disc":1,"track":3,"title":"Live To Fight (Another Day)"},{"id":7654,"disc":1,"track":4,"title":"Red Devil"},{"id":7655,"disc":1,"track":5,"title":"Four Horsemen (of the Apocalypse)"},{"id":7656,"disc":1,"track":6,"title":"Priest of the Unholy"},{"id":7657,"disc":1,"track":7,"title":"Be Careful What You Wish For"},{"id":7658,"disc":1,"track":8,"title":"Caprici Di Diablo"},{"id":7659,"disc":1,"track":9,"title":"Lament"},{"id":7660,"disc":1,"track":10,"title":"Magic City"},{"id":7661,"disc":1,"track":11,"title":"Eleventh Hour"},{"id":7662,"disc":1,"track":12,"title":"Heavy Heart"}],"artist":{"name":"Yngwie Malmsteen","id":219},"title":"Perpetual Flame"}]</con:responseContent><con:header><con:name>Date</con:name><con:value>Sun, 24 Apr 2016 20:21:48 GMT</con:value></con:header><con:header><con:name>Expires</con:name><con:value>Thu, 01 Dec 1994 16:00:00 GMT</con:value></con:header><con:header><con:name>Set-Cookie</con:name><con:value>JSESSIONID=0000ZksUqdkDFQmBB1-tRpVlQVR:0f0b2c75-d742-4bd3-ba52-ad1cbb839de3; Path=/; HttpOnly</con:value></con:header><con:header><con:name>X-Powered-By</con:name><con:value>Servlet/3.1</con:value></con:header><con:header><con:name>Cache-Control</con:name><con:value>no-cache="set-cookie, set-cookie2"</con:value></con:header></con:response></con:restMockAction></con:restMockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
+</con:dispatchPath><con:response name="CreateDummies" id="d030a5aa-2933-41aa-b2a9-6adeba771d2b" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+   "id": 999,
+   "name": "The Dummies"
+}</con:responseContent></con:response></con:restMockAction><con:restMockAction name="/rest/artists" method="OPTIONS" resourcePath="/rest/artists" id="c8978531-f901-47ff-b77d-f780187ea6f7"><con:settings/><con:defaultResponse>Default</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*
+// Script dispatcher is used to select a response based on the incoming request.
+// Here are few examples showing how to match based on path, query param, header and body
+
+// Match based on path
+def requestPath = mockRequest.getPath()
+log.info "Path: "+ requestPath
+
+if( requestPath.contains("json") )
+{
+    // return the name of the response you want to dispatch
+    return "JSON Response"
+}
+
+
+// Match based on query parameter
+def queryString = mockRequest.getRequest().getQueryString()
+log.info "QueryString: " + queryString
+
+if( queryString.contains("stockholm") )
+{
+    // return the name of the response you want to dispatch
+    return "Response Stockholm"
+}
+else if( queryString.contains("london") )
+{
+    // return the name of the response you want to dispatch
+    return "Response London"
+}
+
+
+// Match based on header
+def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")
+log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList
+
+if( acceptEncodingHeaderList.contains("gzip,deflate") )
+{
+    // return the name of the response you want to dispatch
+    return "GZiped Response"
+}
+
+
+// Match based on body
+def requestBody = mockRequest.getRequestContent()
+log.info "Request body: " + requestBody
+
+if( requestBody.contains("some data") )
+{
+    // return the name of the response you want to dispatch
+    return "Response N"
+}
+*/
+</con:dispatchPath><con:response name="Default" id="bbc7bee2-9bbf-43a2-909c-4bd398b29dfc" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent/></con:response></con:restMockAction></con:restMockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
