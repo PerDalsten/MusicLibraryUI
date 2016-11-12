@@ -149,4 +149,29 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 		
 		$location.path('');
 	}
+	
+	$scope.deleteArtist = function() {
+		console.log('Delete Artist');	
+		
+		$http.delete(SERVICE_URL + 'artists/' + $scope.artist.id).
+		then(function successCallback(response) {
+			var index=findIndexById($scope.artists,$scope.artist.id);	
+			$scope.artists.splice(index, 1);				
+			$scope.artist=$scope.artists[0];
+			
+		},function errorCallback(response) {
+			console.log(response.statusText);
+		});
+		
+	}
+	
+	
+	function findIndexById(source,id) {
+		for (var i = 0; i < source.length; i++) {
+			if (source[i].id === id) {
+				return i;
+		    }
+		}		  
+	}
+	
 });
