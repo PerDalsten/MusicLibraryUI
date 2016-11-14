@@ -28,7 +28,7 @@
   <con:entry key="ThreadCount" value=""/>
   <con:entry key="Limit" value=""/>
 </xml-fragment>]]></con:setting></con:settings><con:restMockService id="a66060ee-f8c2-41f6-9734-aa25d094741a" port="8081" path="/MusicLibraryService" host="localhost" name="MusicLibrary MockService" docroot=""><con:settings/><con:properties/><con:onRequestScript>mockRequest.httpResponse.addHeader("Access-Control-Allow-Origin", "http://localhost:8080" )
-mockRequest.httpResponse.addHeader( "Access-Control-Allow-Methods", "GET, POST, DELETE" )
+mockRequest.httpResponse.addHeader( "Access-Control-Allow-Methods", "GET, POST, DELETE, PUT" )
 mockRequest.httpResponse.addHeader( "Access-Control-Allow-Headers", "Content-Type" )</con:onRequestScript><con:restMockAction name="/rest/albums" method="GET" resourcePath="/rest/albums" id="1b6d5ef0-241c-4218-9658-5a3ab9855daa"><con:settings/><con:defaultResponse xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>def requestPath = mockRequest.getPath()
 log.info "Path: "+ requestPath
 
@@ -53294,4 +53294,15 @@ requestPath.split("/")[-1]
 if(resource=="999")
   return "DeleteDummies"
 else
-  return "Default"</con:dispatchPath><con:response name="Default" id="601b440a-17ae-4dfe-9067-fda4afbf592e" httpResponseStatus="500"><con:settings/><con:responseContent/></con:response><con:response name="DeleteDummies" id="7abc5462-1f15-4d12-b623-b237bbc9f288" httpResponseStatus="200"><con:settings/><con:responseContent/></con:response></con:restMockAction></con:restMockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+  return "Default"</con:dispatchPath><con:response name="Default" id="601b440a-17ae-4dfe-9067-fda4afbf592e" httpResponseStatus="500"><con:settings/><con:responseContent/></con:response><con:response name="DeleteDummies" id="7abc5462-1f15-4d12-b623-b237bbc9f288" httpResponseStatus="200"><con:settings/><con:responseContent/></con:response></con:restMockAction><con:restMockAction name="/rest/artists" method="PUT" resourcePath="/rest/artists" id="7b0b5ae1-ba77-4b2b-9dba-26482ab0b91f"><con:settings/><con:defaultResponse>NotFound</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>def requestPath = mockRequest.getPath()
+log.info "Path: "+ requestPath
+def resource = requestPath.split("/")[-1]
+requestPath.split("/")[-1]
+
+if(resource=="999")
+  return "NewDummies"
+else
+  return "NotFound"</con:dispatchPath><con:response name="NotFound" id="5c23ec04-fa36-4412-b292-992b35c4da63" httpResponseStatus="404"><con:settings/><con:responseContent/></con:response><con:response name="NewDummies" id="fbdf801f-9648-414f-af0f-1a40415295dc" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+   "id": 999,
+   "name": "The New Dummies"
+}</con:responseContent></con:response></con:restMockAction></con:restMockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

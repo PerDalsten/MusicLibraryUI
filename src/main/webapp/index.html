@@ -24,8 +24,8 @@
 					ng-model="artist" ng-change="getArtistAlbums()">
 				</select>
 
-                <a ng-show="artist" href="#artistedit"><image src="images/edit.png" title="Edit Artist"></image></a>
-				<img ng-src="images/new.png" ng-click="createNewArtist()" title="New Artist"></img>
+                <img ng-src="images/edit.png" ng-show="artist" ng-click="initEditArtist(true)" title="Edit Artist"></img>
+				<img ng-src="images/new.png" ng-click="initEditArtist(false)" title="New Artist"></img>
 				<img ng-src="images/delete.png" ng-click="deleteArtist()" title="Delete Artist"></img>	
 				
 				<div class="albumSearch">

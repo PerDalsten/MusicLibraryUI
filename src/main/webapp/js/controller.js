@@ -9,7 +9,7 @@ app.config(['$routeProvider', function($routeProvider) {
     })
     .when("/artistedit", {
         templateUrl : "artistedit.html"
-    })    
+    })  
     .otherwise({
         templateUrl : "albumview.html"
     });
@@ -19,26 +19,26 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 	$scope.artists = [];
 	$scope.albums = [];
 
+	//current selections
 	$scope.album;
 	$scope.artist;
-	$scope.artistName;
+	
+	//search input
+	$scope.artistName; 
 	$scope.albumTitle;
 	$scope.albumYear;
 	
-	$scope.newArtist;
+	$scope.editArtist;
 	
 	loadArtists();
 
 	function loadArtists() {
-		$http({
-			method : 'GET',
-			url : SERVICE_URL + 'artists'
-		}).then(function successCallback(response) {
+		$http.get(SERVICE_URL + 'artists').then(function successCallback(response) {
 			$scope.artists = response.data;
 
 			if ($scope.artists.length > 0) {
 				$scope.artist = $scope.artists[0];
-				$scope.getArtistAlbums()
+				$scope.getArtistAlbums();
 			}
 		}, function errorCallback(response) {
 			console.log(response.statusText);
@@ -47,10 +47,8 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 
 	$scope.getArtistAlbums = function() {
 		console.log('Artist changed: ' + $scope.artist.id);
-		$http({
-			method : 'GET',
-			url : SERVICE_URL + 'artists/' + $scope.artist.id + '/albums'			
-		}).then(function successCallback(response) {
+		$http.get(SERVICE_URL + 'artists/' + $scope.artist.id + '/albums')
+		.then(function successCallback(response) {
 			$scope.albums = response.data;
 			
 			if ($scope.albums.length > 0) {
@@ -64,7 +62,7 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 
 	$scope.getAlbum = function(albumId) {
 
-		// XXX Loop through artistAlbums instead
+		// XXX Loop through albums instead
 
 		$http({
 			method : 'GET',
@@ -115,10 +113,7 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 			url+='year='+$scope.albumYear;
 		}
 		
-		$http({
-			method : 'GET',
-			url : url
-		}).then(function successCallback(response) {
+		$http.get(url).then(function successCallback(response) {
 			$scope.albums = response.data;
 			
 			if ($scope.albums.length > 0) {
@@ -128,16 +123,34 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 			console.log(response.statusText);
 		});
 	}
-
+	
 	$scope.createNewArtist = function() {
 		console.log('New Artist');
-		$scope.newArtist= {"id":-1};
+		$scope.editArtist= {"id":-1};
+		$location.path('artistnew');
+	}
+	
+	$scope.initEditArtist = function(editCurrent) {
+		$scope.editArtist= {"id":-1};
+		if(editCurrent){
+		
+			console.log('Current Artist');
+			$scope.editArtist.id=$scope.artist.id;
+			$scope.editArtist.name=$scope.artist.name;
+		}
+		
 		$location.path('artistedit');
 	}
 	
-	$scope.saveNewArtist = function() {
+	$scope.saveArtist = function() {		
 		
-		$http.post(SERVICE_URL + 'artists', $scope.newArtist).then(function successCallback(response) {
+		console.log('EditArtist: '+$scope.editArtist);
+		
+		if($scope.editArtist.id==-1){
+			
+			console.log('NEW');
+		
+		$http.post(SERVICE_URL + 'artists', $scope.editArtist).then(function successCallback(response) {
 			console.log(response.data);
 			$scope.artists.push(response.data);
 			$scope.artist=response.data;	
@@ -146,6 +159,23 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
         }, function errorCallback(response) {
 			console.log(response.statusText);
 		});
+		}else{
+			console.log('CURRENT');
+			
+			var url= SERVICE_URL + 'artists/'+$scope.editArtist.id;
+			
+			$http.put(url, $scope.editArtist).then(function successCallback(response) {
+				console.log(response.data);
+				
+				var index=findIndexById($scope.artists,$scope.artist.id);	
+				$scope.artists[index].name=response.data.name;	
+				$scope.artist=response.data;
+				
+	        }, function errorCallback(response) {
+				console.log(response.statusText);
+			});
+			
+		}
 		
 		$location.path('');
 	}
@@ -158,6 +188,7 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 			var index=findIndexById($scope.artists,$scope.artist.id);	
 			$scope.artists.splice(index, 1);				
 			$scope.artist=$scope.artists[0];
+			$scope.getArtistAlbums();
 			
 		},function errorCallback(response) {
 			console.log(response.statusText);
