@@ -1,8 +1,7 @@
 app = angular.module("musiclibraryapp", [ "ngRoute" , "config" ]);
 
 
-app.config(['$routeProvider', function($routeProvider) {
-    	
+app.config(['$routeProvider', function($routeProvider) {    	
 	$routeProvider    
     .when("/albumedit", {
         templateUrl : "albumedit.html"
@@ -17,18 +16,21 @@ app.config(['$routeProvider', function($routeProvider) {
 
 app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $location) {
 	$scope.artists = [];
+	
+	// albums for current artist or search result
 	$scope.albums = [];
 
-	//current selections
+	// current selections
 	$scope.album;
 	$scope.artist;
 	
-	//search input
+	// search input
 	$scope.artistName; 
 	$scope.albumTitle;
 	$scope.albumYear;
 	
 	$scope.editArtist;
+	$scope.editAlbum;
 	
 	loadArtists();
 
@@ -123,45 +125,30 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 			console.log(response.statusText);
 		});
 	}
-	
-	$scope.createNewArtist = function() {
-		console.log('New Artist');
-		$scope.editArtist= {"id":-1};
-		$location.path('artistnew');
-	}
-	
-	$scope.initEditArtist = function(editCurrent) {
-		$scope.editArtist= {"id":-1};
-		if(editCurrent){
 		
-			console.log('Current Artist');
+	$scope.initEditArtist = function(editCurrent) {
+		$scope.editArtist= {};
+		if(editCurrent){
 			$scope.editArtist.id=$scope.artist.id;
 			$scope.editArtist.name=$scope.artist.name;
-		}
-		
+		}		
 		$location.path('artistedit');
 	}
 	
-	$scope.saveArtist = function() {		
-		
-		console.log('EditArtist: '+$scope.editArtist);
-		
-		if($scope.editArtist.id==-1){
-			
-			console.log('NEW');
-		
-		$http.post(SERVICE_URL + 'artists', $scope.editArtist).then(function successCallback(response) {
-			console.log(response.data);
-			$scope.artists.push(response.data);
-			$scope.artist=response.data;	
-			$scope.albums = [];
-			$scope.album = null;
-        }, function errorCallback(response) {
-			console.log(response.statusText);
-		});
+	$scope.saveArtist = function() {				
+		if(!$scope.editArtist.id){
+			$http.post(SERVICE_URL + 'artists', $scope.editArtist).then(
+					function successCallback(response) {
+						console.log(response.data);
+						$scope.artists.push(response.data);
+						$scope.artist=response.data;	
+						$scope.albums = [];
+						$scope.album = null;
+					}, 
+					function errorCallback(response) {
+						console.log(response.statusText);
+					});
 		}else{
-			console.log('CURRENT');
-			
 			var url= SERVICE_URL + 'artists/'+$scope.editArtist.id;
 			
 			$http.put(url, $scope.editArtist).then(function successCallback(response) {
@@ -197,12 +184,18 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 	}
 	
 	
-	function findIndexById(source,id) {
-		for (var i = 0; i < source.length; i++) {
-			if (source[i].id === id) {
-				return i;
-		    }
-		}		  
+	$scope.initEditAlbum = function(editCurrent) {
+		$scope.editAlbum= {};
+		if(editCurrent){
+			$scope.editAlbum.id=$scope.album.id;
+			$scope.editAlbum.title=$scope.album.title;
+			$scope.editAlbum.year=$scope.album.year;
+			$scope.editAlbum.artist=$scope.artist;			
+		}		
+		$location.path('albumedit');
 	}
 	
+	$scope.saveAlbum = function() {
+		console.log('Save Album');	
+	}
 });
