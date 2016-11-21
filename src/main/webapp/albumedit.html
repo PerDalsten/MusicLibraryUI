@@ -1,10 +1,15 @@
 <div class="album" ng-if="editAlbum">
 
-    Artist name: <span ng-bind="editAlbum.artist.name"></span>
+    Artist name: <span ng-bind="artist.name"></span>
     Album title: <input ng-model="editAlbum.title"></input>
     Album year: <input ng-model="editAlbum.year"></input>
 	
 	<p>
+	
+	<ul>
+		<li ng-repeat="song in editAlbum.songs" ng-bind="song.title"></li>
+	</ul>
+	
 	
 	<a href="#"><image src="images/ok.png" ng-click="saveAlbum()" title="OK"></image></a>	
 	<a href="#"><image src="images/cancel.png" title="Cancel"></image></a>

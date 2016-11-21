@@ -32,8 +32,8 @@
 				<div class="albumSearch">
 				    Album:
 				    <img ng-src="images/edit.png" ng-show="album" ng-click="initEditAlbum(true)" title="Edit Album"></img>
-				    <img ng-src="images/new.png" ng-click="initEditAlbum(false)" title="New Album"></img>				    				   
-				    <a ng-show="album" href="#albumedit"><image src="images/delete.png" title="Delete Album"></image></a>				                        
+				    <img ng-src="images/new.png" ng-click="initEditAlbum(false)" title="New Album"></img>	
+				    <img ng-src="images/delete.png" ng-show="album" ng-click="deleteAlbum()" title="Delete Album"></img>				    				   				    				                       
 					<img ng-src="images/search.png" ng-click="getAlbums()"></img>
 					<label for="artistName">Artist: </label> <input type="text"
 						name="artistName" ng-model="artistName" /> <label
