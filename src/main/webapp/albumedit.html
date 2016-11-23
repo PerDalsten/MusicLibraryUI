@@ -6,8 +6,29 @@
 	
 	<p>
 	
+	
+	
+	 <img ng-if="!editSong" ng-src="images/new.png" ng-click="initEditSong()" title="New">
+	
+	<div  ng-if="editSong">
+	
+	Song: 
+	
+	Title <input ng-model="editSong.title"></input>
+	Track <input ng-model="editSong.track"></input>
+	Disc <input ng-model="editSong.disc"></input>
+	
+	<img ng-src="images/ok.png" ng-click="saveEditSong()" title="Edit">
+    <img ng-src="images/cancel.png" ng-click="cancelEditSong()" title="Cancel">
+	
+	</div>
+	
+	
 	<ul>
-		<li ng-repeat="song in editAlbum.songs" ng-bind="song.title"></li>
+		<li ng-repeat="song in editAlbum.songs | orderBy:['disc','track']" >{{song.disc}}.{{song.track}} - {{song.title}}
+		  <img ng-src="images/edit.png" ng-click="initEditSong(song)" title="Edit">
+		  <img ng-src="images/delete.png" ng-click="deleteSong(song)" title="Delete">
+		</li>
 	</ul>
 	
 	

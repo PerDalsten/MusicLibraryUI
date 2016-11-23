@@ -4,6 +4,16 @@ function findIndexById(source, id) {
 			return i;
 		}
 	}
+	return -1;
+}
+
+function findIndexByIdentity(source, obj) {
+	for (var i = 0; i < source.length; i++) {
+		if (source[i] === obj) {
+			return i;
+		}
+	}
+	return -1;
 }
 
 function copySongs(source, target){

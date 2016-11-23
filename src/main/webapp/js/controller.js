@@ -31,6 +31,8 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 	
 	$scope.editArtist;
 	$scope.editAlbum;
+	$scope.editSong;
+	
 	
 	loadArtists();
 
@@ -47,8 +49,7 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 		});
 	}
 
-	$scope.getArtistAlbums = function() {
-		console.log('Artist changed: ' + $scope.artist.id);
+	$scope.getArtistAlbums = function() {		
 		$http.get(SERVICE_URL + 'artists/' + $scope.artist.id + '/albums')
 		.then(function successCallback(response) {
 			$scope.albums = response.data;
@@ -80,10 +81,6 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 	}
 	
 	$scope.getAlbums = function() {
-
-		console.log('Artist: '+$scope.artistName);
-		console.log('Album: '+$scope.albumTitle);
-		console.log('Year: '+$scope.albumYear);
 		
 		var url= SERVICE_URL + 'albums';
 		var firstArg = true;
@@ -157,9 +154,7 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 		}else{
 			var url= SERVICE_URL + 'artists/'+$scope.editArtist.id;
 			
-			$http.put(url, $scope.editArtist).then(function successCallback(response) {
-				console.log(response.data);
-				
+			$http.put(url, $scope.editArtist).then(function successCallback(response) {				
 				var index=findIndexById($scope.artists,$scope.artist.id);	
 				$scope.artists[index].name=response.data.name;					
 				$scope.artist=response.data;
@@ -174,8 +169,7 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 	}
 	
 	$scope.deleteArtist = function() {
-		console.log('Delete Artist');	
-		
+				
 		$http.delete(SERVICE_URL + 'artists/' + $scope.artist.id).
 		then(function successCallback(response) {
 			var index=findIndexById($scope.artists,$scope.artist.id);	
@@ -185,11 +179,9 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 			
 		},function errorCallback(response) {
 			console.log(response.statusText);
-		});
-		
+		});		
 	}
-	
-	
+		
 	$scope.initEditAlbum = function(editCurrent) {
 		$scope.editAlbum= {};
 		if(editCurrent){
@@ -206,13 +198,10 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 	}
 	
 	$scope.saveAlbum = function() {
-		console.log('Save Album');	
-				
 		if(!$scope.editAlbum.id){
 			
 			$http.post(SERVICE_URL + 'albums', $scope.editAlbum).then(
-					function successCallback(response) {
-						console.log(response.data);						
+					function successCallback(response) {						
 						$scope.albums.push(response.data);
 						$scope.album = response.data;	
 					}, 
@@ -222,11 +211,9 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 		}else{
 			var url= SERVICE_URL + 'albums/'+$scope.editAlbum.id;
 			
-			$http.put(url, $scope.editAlbum).then(function successCallback(response) {
-				console.log(response.data);
+			$http.put(url, $scope.editAlbum).then(function successCallback(response) {				
 				
-				var index=findIndexById($scope.albums,$scope.editAlbum.id);
-				console.log('Album index: '+index);
+				var index=findIndexById($scope.albums,$scope.editAlbum.id);				
 				$scope.albums[index].title=response.data.title;
 				$scope.albums[index].year=response.data.year;
 				$scope.albums[index].artist=response.data.artist;
@@ -239,12 +226,10 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 			
 		}
 		
-		$location.path('');
-		
+		$location.path('');		
 	}
 	
-	$scope.deleteAlbum = function() {
-		console.log('Delete Album');	
+	$scope.deleteAlbum = function() {		
 		
 		$http.delete(SERVICE_URL + 'albums/' + $scope.album.id).
 		then(function successCallback(response) {
@@ -258,7 +243,59 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 			}						
 		},function errorCallback(response) {
 			console.log(response.statusText);
-		});
-		
+		});		
 	}
+	
+	$scope.initEditSong = function(song) {
+						
+		$scope.editSong={};
+		
+		if(song){			
+			if(song.id){
+				$scope.editSong.id=song.id;	
+			}else{
+				//Need to keep track of non-persisted song already in song list
+				$scope.editSong.id=-1;
+				song.id=-1;
+			}
+									
+			$scope.editSong.title=song.title;
+			$scope.editSong.track=song.track;
+			$scope.editSong.disc=song.disc;
+		}
+		else{
+			$scope.editSong.track=$scope.editAlbum.songs.length+1;
+			$scope.editSong.disc='1';			
+		}
+	}	
+	
+    $scope.cancelEditSong = function() {		
+		$scope.editSong=null;			
+	}	
+    
+    $scope.saveEditSong = function() {
+		
+    	var index=index=findIndexById($scope.editAlbum.songs,$scope.editSong.id);	    
+    	
+    	if($scope.editSong.id==-1){    	
+    		$scope.editAlbum.songs[index].id=null;
+    		$scope.editSong.id==null;
+    	}    	    	
+    	
+    	if(index>=0){
+    		$scope.editAlbum.songs[index].title=$scope.editSong.title;
+    		$scope.editAlbum.songs[index].track=$scope.editSong.track;
+    		$scope.editAlbum.songs[index].disc=$scope.editSong.disc;
+    	}    	
+    	else{
+    		$scope.editAlbum.songs.push($scope.editSong);    		
+    	}
+    	    	
+    	$scope.editSong=null;			
+	}	    
+    
+    $scope.deleteSong = function(song) {    	
+    	var index=findIndexByIdentity($scope.editAlbum.songs,song);    	    
+    	$scope.editAlbum.songs.splice(index, 1);	
+    }
 });
