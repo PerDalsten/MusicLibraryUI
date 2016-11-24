@@ -53,3 +53,19 @@ body {
 	overflow: auto;
 	padding-left: 25px;
 }
+
+div.album input{
+	display: block;
+	margin-bottom: 10px;
+}
+
+div.album div{
+	margin-bottom: 10px;
+}
+
+.smallButton {
+	height: auto;
+	width: auto;
+	max-width: 16px;
+	max-height: 16px;
+}

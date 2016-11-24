@@ -1,35 +1,59 @@
 <div class="album" ng-if="editAlbum">
 
-    Artist name: <span ng-bind="artist.name"></span>
-    Album title: <input ng-model="editAlbum.title"></input>
-    Album year: <input ng-model="editAlbum.year"></input>
+    Artist name: <div ng-bind="artist.name"></div>
+    
+    <label for="albumTitle">Album title:</label>
+    <input name="albumTitle" ng-model="editAlbum.title"></input>
+    
+    <label for="albumTitle">Album year:</label>
+    <input ng-model="editAlbum.year"></input>
+	
 	
 	<p>
+	Songs:
+	</p>
 	
+	<div>
+	<img ng-if="!editSong" ng-src="images/new.png" ng-click="initEditSong()" title="New Song" class="smallButton">
+	</div>
 	
-	
-	 <img ng-if="!editSong" ng-src="images/new.png" ng-click="initEditSong()" title="New">
 	
 	<div  ng-if="editSong">
-	
-	Song: 
 	
 	Title <input ng-model="editSong.title"></input>
 	Track <input ng-model="editSong.track"></input>
 	Disc <input ng-model="editSong.disc"></input>
 	
-	<img ng-src="images/ok.png" ng-click="saveEditSong()" title="Edit">
-    <img ng-src="images/cancel.png" ng-click="cancelEditSong()" title="Cancel">
+	<img ng-src="images/ok.png" ng-click="saveEditSong()" title="Edit" class="smallButton">
+    <img ng-src="images/cancel.png" ng-click="cancelEditSong()" title="Cancel" class="smallButton">
 	
 	</div>
 	
+	<div>
+	  <table>
+	    <thead>
+	    	<tr>
+	    		<th></th>
+	    		<th>Disc</th>
+	    		<th>Track</th>
+	    		<th>Title</th>
+	    	</tr>
+	    </thead>
+	    <tbody>
+	    	<tr ng-repeat="song in editAlbum.songs | orderBy:['disc','track']" >
+	    	  <td>
+	    	  	<img ng-src="images/edit.png" ng-click="initEditSong(song)" title="Edit" class="smallButton">
+		  		<img ng-src="images/delete.png" ng-click="deleteSong(song)" title="Delete" class="smallButton">
+	    	  </td>
+	    	  <td>{{song.disc}}</td>
+	    	  <td>{{song.track}}</td>
+	    	  <td>{{song.title}}</td>
+	    	</tr>
+	    </tbody>
+	  </table>
+	</div>
 	
-	<ul>
-		<li ng-repeat="song in editAlbum.songs | orderBy:['disc','track']" >{{song.disc}}.{{song.track}} - {{song.title}}
-		  <img ng-src="images/edit.png" ng-click="initEditSong(song)" title="Edit">
-		  <img ng-src="images/delete.png" ng-click="deleteSong(song)" title="Delete">
-		</li>
-	</ul>
+	
 	
 	
 	<a href="#"><image src="images/ok.png" ng-click="saveAlbum()" title="OK"></image></a>	
