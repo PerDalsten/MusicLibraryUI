@@ -24,7 +24,7 @@
 		<img ng-src="images/cancel.png" ng-click="cancelEditSong()" title="Cancel" class="smallButton">
 	</div>
 
-	<div ng-if="editAlbum.songs">
+	<div ng-if="editAlbum.songs && editAlbum.songs.length > 0">
 		<table>
 			<thead>
 				<tr>

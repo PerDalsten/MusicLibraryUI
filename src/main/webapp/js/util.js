@@ -1,4 +1,8 @@
 function findIndexById(source, id) {
+	
+	if(id == null)
+		return -1;
+	
 	for (var i = 0; i < source.length; i++) {
 		if (source[i].id === id) {
 			return i;

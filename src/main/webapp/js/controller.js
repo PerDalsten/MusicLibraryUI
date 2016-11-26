@@ -46,6 +46,7 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 			}
 		}, function errorCallback(response) {
 			console.log(response.statusText);
+			alert('Error: '+response.statusText);
 		});
 	}
 
@@ -63,6 +64,7 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 			
 		}, function errorCallback(response) {
 			console.log(response.statusText);
+			alert('Error: '+response.statusText);
 		});
 	}
 
@@ -77,6 +79,7 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 			$scope.album = response.data;
 		}, function errorCallback(response) {
 			console.log(response.statusText);
+			alert('Error: '+response.statusText);
 		});
 	}
 	
@@ -126,6 +129,7 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 			}
 		}, function errorCallback(response) {
 			console.log(response.statusText);
+			alert('Error: '+response.statusText);
 		});
 	}
 		
@@ -150,6 +154,7 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 					}, 
 					function errorCallback(response) {
 						console.log(response.statusText);
+						alert('Error: '+response.statusText);
 					});
 		}else{
 			var url= SERVICE_URL + 'artists/'+$scope.editArtist.id;
@@ -161,6 +166,7 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 				
 	        }, function errorCallback(response) {
 				console.log(response.statusText);
+				alert('Error: '+response.statusText);
 			});
 			
 		}
@@ -179,20 +185,20 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 			
 		},function errorCallback(response) {
 			console.log(response.statusText);
+			alert('Error: '+response.statusText);
 		});		
 	}
 		
 	$scope.initEditAlbum = function(editCurrent) {
 		$scope.editAlbum= {};
+		$scope.editAlbum.songs = [];
+		$scope.editAlbum.artist=$scope.artist;
 		$scope.editSong = null;
 		
 		if(editCurrent){
 			$scope.editAlbum.id=$scope.album.id;
 			$scope.editAlbum.title=$scope.album.title;
-			$scope.editAlbum.year=$scope.album.year;
-			$scope.editAlbum.artist=$scope.artist;		
-			
-			$scope.editAlbum.songs = [];
+			$scope.editAlbum.year=$scope.album.year;										
 			
 			copySongs($scope.album.songs, $scope.editAlbum.songs);			
 		}		
@@ -209,6 +215,7 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 					}, 
 					function errorCallback(response) {
 						console.log(response.statusText);
+						alert('Error: '+response.statusText);
 					});
 		}else{
 			var url= SERVICE_URL + 'albums/'+$scope.editAlbum.id;
@@ -224,6 +231,7 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 				
 	        }, function errorCallback(response) {
 				console.log(response.statusText);
+				alert('Error: '+response.statusText);
 			});
 			
 		}
@@ -245,6 +253,7 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 			}						
 		},function errorCallback(response) {
 			console.log(response.statusText);
+			alert('Error: '+response.statusText);
 		});		
 	}
 	
@@ -266,7 +275,13 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 			$scope.editSong.disc=song.disc;
 		}
 		else{
-			$scope.editSong.track=$scope.editAlbum.songs.length+1;
+			if($scope.editAlbum.songs){
+				$scope.editSong.track=$scope.editAlbum.songs.length+1;
+			}
+			else{
+				$scope.editSong.track=1;
+			}
+			
 			$scope.editSong.disc='1';			
 		}
 	}	
@@ -277,7 +292,7 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
     
     $scope.saveEditSong = function() {
 		
-    	var index=index=findIndexById($scope.editAlbum.songs,$scope.editSong.id);	    
+    	var index=findIndexById($scope.editAlbum.songs,$scope.editSong.id);	    
     	
     	if($scope.editSong.id==-1){    	
     		$scope.editAlbum.songs[index].id=null;
