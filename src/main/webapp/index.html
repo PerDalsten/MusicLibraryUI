@@ -18,30 +18,32 @@
 	<div class="app" ng-controller="MusicLibraryController">
 
 		<div class="toolBar">
-			<div class="albumSelect">
+
+			<div class="albumTools">
+				Album: <img ng-src="images/edit.png" ng-show="album"
+					ng-click="initEditAlbum(true)" title="Edit Album"></img> <img
+					ng-src="images/new.png" ng-click="initEditAlbum(false)"
+					title="New Album"></img> <img ng-src="images/delete.png"
+					ng-show="album" ng-click="deleteAlbum()" title="Delete Album"></img>
+				<img ng-src="images/search.png" ng-click="getAlbums()"></img> <label
+					for="artistName">Artist: </label> <input type="text"
+					name="artistName" ng-model="artistName" /> <label for="albumTitle">Title:
+				</label> <input type="text" name="albumTitle" ng-model="albumTitle" /> <label
+					for="albumYear">Year: </label> <input type="text" name="albumYear"
+					ng-model="albumYear" ng-pattern="/^[0-9]{1,4}$/" maxlength="4"
+					size="4" />
+			</div>
+
+			<div class="artistTools">
 				<label for="artistSelect">Artist:</label> <select
 					name="artistSelect" id="artistSelect"
 					ng-options="artist.name for artist in artists | orderBy:'name' track by artist.id  "
 					ng-model="artist" ng-change="getArtistAlbums()">
-				</select>
-
-                <img ng-src="images/edit.png" ng-show="artist" ng-click="initEditArtist(true)" title="Edit Artist"></img>
-				<img ng-src="images/new.png" ng-click="initEditArtist(false)" title="New Artist"></img>
-				<img ng-src="images/delete.png" ng-click="deleteArtist()" title="Delete Artist"></img>	
-				
-				<div class="albumSearch">
-				    Album:
-				    <img ng-src="images/edit.png" ng-show="album" ng-click="initEditAlbum(true)" title="Edit Album"></img>
-				    <img ng-src="images/new.png" ng-click="initEditAlbum(false)" title="New Album"></img>	
-				    <img ng-src="images/delete.png" ng-show="album" ng-click="deleteAlbum()" title="Delete Album"></img>				    				   				    				                       
-					<img ng-src="images/search.png" ng-click="getAlbums()"></img>
-					<label for="artistName">Artist: </label> <input type="text"
-						name="artistName" ng-model="artistName" /> <label
-						for="albumTitle">Title: </label> <input type="text"
-						name="albumTitle" ng-model="albumTitle" /> <label for="albumYear">Year:
-					</label> <input type="text" name="albumYear" ng-model="albumYear"
-						ng-pattern="/^[0-9]{1,4}$/" maxlength="4" size="4" />
-				</div>
+				</select> <img ng-src="images/edit.png" ng-show="artist"
+					ng-click="initEditArtist(true)" title="Edit Artist"></img> <img
+					ng-src="images/new.png" ng-click="initEditArtist(false)"
+					title="New Artist"></img> <img ng-src="images/delete.png"
+					ng-click="deleteArtist()" title="Delete Artist"></img>
 			</div>
 		</div>
 
@@ -53,8 +55,8 @@
 			</ul>
 		</div>
 
-       <div ng-view="true"></div>
-		
+		<div ng-view="true"></div>
+
 	</div>
 
 </body>

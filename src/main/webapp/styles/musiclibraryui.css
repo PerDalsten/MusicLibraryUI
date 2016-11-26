@@ -23,22 +23,36 @@ body {
 .toolBar {
 	height: 50px;
 	width: 100%;
-	display: flex;
+	
 	align-items: center;
 }
 
-.albumSelect {
+.toolBarItems {
 	width: 100%;
 }
 
-.albumSelect label {
+.albumTools label {
 	margin-left: 10px;
 }
 
-.albumSearch{
+.artistTools{
+	
+	padding-left: 10px;
+}
+
+.albumTools{
 	float: right;
 	padding-right: 10px;
 }
+
+div.artistTools img {	
+	vertical-align: middle;	
+}
+
+div.albumTools img {	
+	vertical-align: middle;	
+}
+
 
 .albumList {
 	height: calc(100% - 50px);
@@ -51,7 +65,8 @@ body {
 	height: calc(100% - 50px);
 	width: calc(75%-25px);
 	overflow: auto;
-	padding-left: 25px;
+	padding-left: 50px;
+	padding-top: 25px;
 }
 
 div.album input{
@@ -61,6 +76,15 @@ div.album input{
 
 div.album div{
 	margin-bottom: 10px;
+}
+
+td.center {
+	text-align: center;
+}
+
+.okcancel {
+	float: right;
+	padding-right: 10px;
 }
 
 .smallButton {

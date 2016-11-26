@@ -184,6 +184,8 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 		
 	$scope.initEditAlbum = function(editCurrent) {
 		$scope.editAlbum= {};
+		$scope.editSong = null;
+		
 		if(editCurrent){
 			$scope.editAlbum.id=$scope.album.id;
 			$scope.editAlbum.title=$scope.album.title;
