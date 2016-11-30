@@ -1,8 +1,10 @@
 <div class="artist" ng-if="artist">
 	
-	Artist name: <input ng-model="editArtist.name"></input>
+	<div>Artist name:</div> 
+	<input ng-model="editArtist.name"></input>
 	
-	
-	<img ng-src="images/ok.png" ng-click="saveArtist()" title="OK"></img>	
-	<a href="#"><image src="images/cancel.png" title="Cancel"></image></a>
+	<div class="okcancel">
+		<img ng-src="images/ok.png" ng-click="saveArtist()" title="OK"></img>	
+		<a href="#"><image src="images/cancel.png" title="Cancel"></image></a>
+	</div>	
 </div>

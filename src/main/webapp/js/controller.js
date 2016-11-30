@@ -68,19 +68,8 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 		});
 	}
 
-	$scope.getAlbum = function(albumId) {
-
-		// XXX Loop through albums instead
-
-		$http({
-			method : 'GET',
-			url : SERVICE_URL + 'albums/' + albumId
-		}).then(function successCallback(response) {
-			$scope.album = response.data;
-		}, function errorCallback(response) {
-			console.log(response.statusText);
-			alert('Error: '+response.statusText);
-		});
+	$scope.setAlbum = function(album) {
+		$scope.album = album;
 	}
 	
 	$scope.getAlbums = function() {
@@ -127,6 +116,7 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 			else{
 				$scope.album = null;
 			}
+			$scope.artist = null;
 		}, function errorCallback(response) {
 			console.log(response.statusText);
 			alert('Error: '+response.statusText);
@@ -175,7 +165,10 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 	}
 	
 	$scope.deleteArtist = function() {
-				
+		
+		if(!confirm("Really delete artist?"))
+			return;
+					
 		$http.delete(SERVICE_URL + 'artists/' + $scope.artist.id).
 		then(function successCallback(response) {
 			var index=findIndexById($scope.artists,$scope.artist.id);	
@@ -240,6 +233,9 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 	}
 	
 	$scope.deleteAlbum = function() {		
+		
+		if(!confirm("Really delete album?"))
+			return;
 		
 		$http.delete(SERVICE_URL + 'albums/' + $scope.album.id).
 		then(function successCallback(response) {
