@@ -24,7 +24,7 @@
 				<img ng-src="images/edit.png" ng-show="album" ng-click="initEditAlbum(true)" title="Edit Album"></img> 
 				<img ng-src="images/new.png" ng-click="initEditAlbum(false)" title="New Album"></img> 
 				<img ng-src="images/delete.png" ng-show="album" ng-click="deleteAlbum()" title="Delete Album"></img>
-				<img ng-src="images/search.png" ng-click="getAlbums()"></img> 
+				<img ng-src="images/search.png" ng-click="getAlbums()" title="Search Album"></img> 
 				<label for="artistName">Artist: </label> 
 				<input type="text" name="artistName" ng-model="artistName" /> 
 				<label for="albumTitle">Title:</label> 
@@ -46,8 +46,8 @@
 
 
 		<div class="albumList">
-			<ul>
-				<li ng-repeat="album in albums" ng-bind="album.title" ng-click="setAlbum(album)"></li>
+			<ul style="text-decoration: underline;">
+				<li ng-repeat="album in albums" ng-click="setAlbum(album)" ng-bind="album.title"></li>
 			</ul>
 		</div>
 

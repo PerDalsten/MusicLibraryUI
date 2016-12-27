@@ -4,7 +4,7 @@
 	<div ng-bind="artist.name"></div>
 
 	<label for="albumTitle">Album title:</label> 
-	<input name="albumTitle" ng-model="editAlbum.title"></input> 
+	<input name="albumTitle" ng-model="editAlbum.title" size="40"></input> 
 	<label for="albumTitle">Album year:</label> 
 	<input ng-model="editAlbum.year" maxlength="4" size="4"></input>
 
@@ -17,10 +17,10 @@
 
 
 	<div ng-if="editSong">
-		Title <input ng-model="editSong.title"></input> 
+		Title <input ng-model="editSong.title" size="40"></input> 
 		Disc <input ng-model="editSong.disc" maxlength="2" size="2"></input> 
 		Track <input ng-model="editSong.track" maxlength="2" size="2"></input> 
-		<img ng-src="images/ok.png" ng-click="saveEditSong()" title="Edit" class="smallButton"> 
+		<img ng-src="images/ok.png" ng-click="saveEditSong()" title="OK" class="smallButton"> 
 		<img ng-src="images/cancel.png" ng-click="cancelEditSong()" title="Cancel" class="smallButton">
 	</div>
 
