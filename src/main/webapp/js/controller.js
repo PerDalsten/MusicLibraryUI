@@ -183,18 +183,27 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 	}
 		
 	$scope.initEditAlbum = function(editCurrent) {
+				
 		$scope.editAlbum= {};
-		$scope.editAlbum.songs = [];
-		$scope.editAlbum.artist=$scope.artist;
+		$scope.editAlbum.songs = [];		
 		$scope.editSong = null;
 		
 		if(editCurrent){
+			$scope.editAlbum.artist=$scope.album.artist;
 			$scope.editAlbum.id=$scope.album.id;
 			$scope.editAlbum.title=$scope.album.title;
 			$scope.editAlbum.year=$scope.album.year;										
 			
 			copySongs($scope.album.songs, $scope.editAlbum.songs);			
+		} else {			
+			if(!$scope.artist){
+				alert('Please select an artist for the new album');
+				return;
+			}	
+						
+			$scope.editAlbum.artist=$scope.artist;			
 		}		
+				
 		$location.path('albumedit');
 	}
 	
