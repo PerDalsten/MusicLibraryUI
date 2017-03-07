@@ -46,8 +46,12 @@
 
 
 		<div class="albumList">
-			<ul style="text-decoration: underline;">
-				<li ng-repeat="album in albums" ng-click="setAlbum(album)" ng-bind="album.title"></li>
+			<ul class="button-list">
+				<li ng-repeat="a in albums">
+					<img ng-if="a.id!=album.id" ng-src="images/view.png" ng-click="setAlbum(a)" title="View Album" class="smallButton"></img>
+					<img ng-if="a.id==album.id" ng-src="images/ok.png" class="smallButton"></img>
+					{{a.title}}
+				</li>
 			</ul>
 		</div>
 

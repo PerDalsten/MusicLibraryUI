@@ -97,3 +97,13 @@ td.center {
 	max-width: 16px;
 	max-height: 16px;
 }
+
+.button-list
+{
+    list-style: none;
+}
+
+.button-list img {
+	margin-right: 5px;
+	vertical-align: middle;
+}
