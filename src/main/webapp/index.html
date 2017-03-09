@@ -45,14 +45,16 @@
 		</div>
 
 
-		<div class="albumList">
-			<ul class="button-list">
-				<li ng-repeat="a in albums">
-					<img ng-if="a.id!=album.id" ng-src="images/view.png" ng-click="setAlbum(a)" title="View Album" class="smallButton"></img>
-					<img ng-if="a.id==album.id" ng-src="images/ok.png" class="smallButton"></img>
-					{{a.title}}
-				</li>
-			</ul>
+		<div class="albumList" ng-if="albums">
+			<table>
+				<tr ng-repeat="a in albums" ng-click="setAlbum(a)">
+					<td class="tableImage">
+						<img ng-if="a.id!=album.id" ng-src="images/view.png"  title="View Album" class="smallButton"></img>
+						<img ng-if="a.id==album.id" ng-src="images/ok.png" class="smallButton"></img>
+					</td>
+					<td>{{a.title}}</td>
+				</tr>
+			</table>
 		</div>
 
 		<div ng-view="true"></div>

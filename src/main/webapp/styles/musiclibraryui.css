@@ -103,7 +103,16 @@ td.center {
     list-style: none;
 }
 
-.button-list img {
+.albumList img {
 	margin-right: 5px;
-	vertical-align: middle;
 }
+
+.albumList table {
+	margin-left: 15px;	
+	margin-top: 15px;	
+}
+
+.tableImage {
+	vertical-align: top;
+}
+
