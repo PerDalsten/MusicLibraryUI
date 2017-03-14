@@ -154,6 +154,13 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 				$scope.artists[index].name=response.data.name;					
 				$scope.artist=response.data;
 				
+				if($scope.albums){
+					for(var i=0; i< $scope.albums.length; i++){
+						if($scope.albums[i].artist.id == $scope.artist.id){
+							$scope.albums[i].artist = $scope.artist;
+						}
+					}
+				}				
 	        }, function errorCallback(response) {
 				console.log(response.statusText);
 				alert('Error: '+response.statusText);
