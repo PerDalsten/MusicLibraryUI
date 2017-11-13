@@ -14,7 +14,7 @@ app.config(['$routeProvider', function($routeProvider) {
     });
 }]);
 
-app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $location) {
+app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, CONFIG_URL, $location) {
 	$scope.artists = [];
 	
 	// albums for current artist or search result
@@ -33,11 +33,34 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 	$scope.editAlbum;
 	$scope.editSong;
 	
+	$scope.serviceURL;
 	
-	loadArtists();
+	init();
+	
+	function init(){
+		$http.get(CONFIG_URL).then(
+			function successCallback(response) {
+			    var config = response.data;
+			    var url=config.propertySources[0].source.serviceURL;
+			    if(url)
+			        return url;
+			    else 
+			    	    return SERVICE_URL;
+			},
+            function errorCallback(response) {
+				return SERVICE_URL;	
+			}
+		).then(function (url){
+			console.log('Setting service url: '+url);
+			$scope.serviceURL=url;
+			loadArtists();
+		}).catch(function(e){
+			alert('Error: '+e);
+		});
+	}
 
 	function loadArtists() {
-		$http.get(SERVICE_URL + 'artists').then(function successCallback(response) {
+		$http.get($scope.serviceURL + 'artists').then(function successCallback(response) {
 			$scope.artists = response.data;
 
 			if ($scope.artists.length > 0) {
@@ -51,7 +74,7 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 	}
 
 	$scope.getArtistAlbums = function() {		
-		$http.get(SERVICE_URL + 'artists/' + $scope.artist.id + '/albums')
+		$http.get($scope.serviceURL + 'artists/' + $scope.artist.id + '/albums')
 		.then(function successCallback(response) {
 			$scope.albums = response.data;
 			
@@ -74,7 +97,7 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 	
 	$scope.getAlbums = function() {
 		
-		var url= SERVICE_URL + 'albums';
+		var url= $scope.serviceURL + 'albums';
 		var firstArg = true;
 		
 		if($scope.artistName){			
@@ -134,7 +157,7 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, $l
 	
 	$scope.saveArtist = function() {				
 		if(!$scope.editArtist.id){
-			$http.post(SERVICE_URL + 'artists', $scope.editArtist).then(
+			$http.post($scope.serviceURL + 'artists', $scope.editArtist).then(
 					function successCallback(response) {
 						console.log(response.data);
 						$scope.artists.push(response.data);
