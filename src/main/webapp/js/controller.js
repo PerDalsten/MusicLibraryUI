@@ -50,9 +50,11 @@ app.controller("MusicLibraryController", function($scope, $http, SERVICE_URL, CO
             function errorCallback(response) {
 				return SERVICE_URL;	
 			}
-		).then(function (url){
-			console.log('Setting service url: '+url);
+		).then(function (url){			
 			$scope.serviceURL=url;
+			if(!$scope.serviceURL.endsWith('/'))
+				$scope.serviceURL+='/';
+			console.log('Setting service url: '+$scope.serviceURL);
 			loadArtists();
 		}).catch(function(e){
 			alert('Error: '+e);
