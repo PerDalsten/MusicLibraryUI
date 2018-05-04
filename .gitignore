@@ -18,6 +18,9 @@ logs
 .DS_Store
 .tern-project
 
+.idea
+*.iml
+
 bin
 build
 .gradle
