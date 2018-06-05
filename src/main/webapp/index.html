@@ -26,11 +26,11 @@
 				<img ng-src="images/delete.png" ng-show="album" ng-click="deleteAlbum()" title="Delete Album"></img>
 				<img ng-src="images/search.png" ng-click="getAlbums()" title="Search Album"></img> 
 				<label for="artistName">Artist: </label> 
-				<input type="text" name="artistName" ng-model="artistName" /> 
+				<input type="text" name="artistName" ng-model="artistName" ng-enter="getAlbums()"/> 
 				<label for="albumTitle">Title:</label> 
-				<input type="text" name="albumTitle" ng-model="albumTitle" /> 
+				<input type="text" name="albumTitle" ng-model="albumTitle" ng-enter="getAlbums()"/> 
 				<label for="albumYear">Year: </label> 
-				<input type="text" name="albumYear" ng-model="albumYear" maxlength="4" size="4" />
+				<input type="text" name="albumYear" ng-model="albumYear" maxlength="4" size="4" ng-enter="getAlbums()"/>
 			</div>
 
 			<div class="artistTools">
